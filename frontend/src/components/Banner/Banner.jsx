@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 const Banner = ({data}) => {
   return (
     <div className='min-h-[550px] flex items-center justify-center
@@ -30,8 +31,10 @@ const Banner = ({data}) => {
         <p className='text-3xl sm:text-5xl font-bold'>{data.title3}</p>
         <p className='text-sm tracking-wide leading-5'>{data.title4}</p>
         <div>
-        <button style={{ color: data.bgColor }}
+        <Link to="/shop">
+        <button style={{ color: data.bgColor }} 
         className='bg-white  py-2 px-4 rounded-full'>Shop now</button>
+        </Link>
       </div>
       </div>
       </div>
