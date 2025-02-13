@@ -53,14 +53,15 @@ const App = () => {
           <Route path="/" element={
             <>
               <Hero />
+              <Banner data={BannerData} />
               <Category />
               <Category2 />
               <Category3 />
               <Category4 />
               <Sevices />
-              <Banner data={BannerData} />
-              <Products />
+              
               <Banner data={BannerData2} />
+              
               <Blogs />
               
             </>
