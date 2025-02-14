@@ -12,14 +12,14 @@ import Image7 from '../../assets/SA/Yellow.png';
 import Image8 from '../../assets/SA/Red.png';
 
 const ProductsData = [
-  { id: 1, img: Image1, title: "กุ้งแคระเรด บี รอง", price: "฿100", asoDelay: "ซื้อด่วน" },
-  { id: 2, img: Image2, title: "กุ้งแคระ ส้มซูชิ", price: "15", asoDelay: "ซื้อด่วน" },
-  { id: 3, img: Image3, title: "กุ้งยามาโตะ", price: "฿60", asoDelay: "ซื้อด่วน" },
-  { id: 4, img: Image4, title: "กุ้งดรีมบลู", price: "฿20", asoDelay: "ซื้อด่วน" },
-  { id: 5, img: Image5, title: "กุ้งสโนว์บอล", price: "฿20", asoDelay: "ซื้อด่วน" },
-  { id: 6, img: Image6, title: "กุ้งซูชิแดง", price: "฿15", asoDelay: "ซื้อด่วน" },
-  { id: 7, img: Image7, title: "กุ้งส้มเคลือบเหลือง", price: "฿10", asoDelay: "ซื้อด่วน" },
-  { id: 8, img: Image8, title: "กุ้งแดง", price: "฿10", asoDelay: "ซื้อด่วน" },
+  { id: 1, img: Image1, title: "กุ้งแคระเรด บี รอง", price: "฿100" },
+  { id: 2, img: Image2, title: "กุ้งแคระ ส้มซูชิ", price: "฿15" },
+  { id: 3, img: Image3, title: "กุ้งยามาโตะ", price: "฿60" },
+  { id: 4, img: Image4, title: "กุ้งดรีมบลู", price: "฿20" },
+  { id: 5, img: Image5, title: "กุ้งสโนว์บอล", price: "฿20" },
+  { id: 6, img: Image6, title: "กุ้งซูชิแดง", price: "฿15" },
+  { id: 7, img: Image7, title: "กุ้งส้มเคลือบเหลือง", price: "฿10" },
+  { id: 8, img: Image8, title: "กุ้งแดง", price: "฿10" },
 ];
 
 const ShopFish = () => {
