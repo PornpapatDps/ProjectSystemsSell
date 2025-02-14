@@ -13,32 +13,30 @@ const FooterLinks = [
         link: "/about",
     },
     {
-        title: "Services",
-        link: "/services",
+        title: "Shop",
+        link: "/shop",
     },
-    {
-        title: "Contact",
-        link: "/contact",
-    },
+    
 ];
 
 const Footer = () => {
   return (
-    <div className='dark:bg-gray-950'>
-      <div className="container">
+    <div className='dark:bg-gray-950 font-[Kanit]' >
+      <div className="container" >
         <div className="grid md:grid-cols-3 pb-20 pt-5">
             {/* company detail */}
             <div className='py-8 px-4'>
                 <a href="#"
                 className='text-primary font-bold 
                 tracking-widest text-2xl uppercase sm:text-3xl'>
-                    Eshop
+                    88aqua
                 </a>
                 <p className='text-gray-600 dark:text-white/70 lg:pr-24 pt-3'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                88Aqua เป็นร้านจำหน่ายสัตว์น้ำสวยงาม อุปกรณ์ตู้ปลา และของตกแต่งสำหรับคนรักการเลี้ยงปลาและสัตว์น้ำทุกประเภท 
+                เราคัดสรรสินค้าคุณภาพสูง ทั้งปลา กุ้งสวยงาม ไม้น้ำ รวมถึงอุปกรณ์ตู้ปลาครบครัน เช่น ระบบกรองน้ำ ไฟ LED หินตกแต่ง และอาหารสัตว์น้ำ
                 </p>
                 <p className='text-gray-500 mt-4'>
-                    Made with ❤️ by Pornpapat Dps
+                    จัดทำเว็บไซต์ by Pornpapat Dps
                 </p>
             </div>
             {/* Footer links */}
@@ -84,23 +82,23 @@ const Footer = () => {
                     sm:text-left mb-3
                     ">Address</h1>
                 <div>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-2 '>
                         <FaLocationArrow/>
                         <p className='text-gray-600 dark:text-gray-400'>
-                            123 Lorem Ipsum, Dolor Sit Amet, 12345 </p>
+                        735 ถ. กำแพงเพชร 2 แขวงจตุจักร เขตจตุจักร กรุงเทพมหานคร 10900 </p>
                     </div>
                     <div className='flex items-center gap-2 mt-6'>
                         <FaMobileAlt />
                         <p className='text-gray-600 dark:text-gray-400'>
-                            0000000000 </p>
+                        081 489 9464 </p>
                     </div>
                 </div>
                 {/*social media*/ }
                 <div className='flex items-center gap-2 mt-6'>
-                    <a href="#">
+                    <a href="https://www.instagram.com/88aqua/">
                         <FaInstagram className='text-3xl hover:text-primary duration-300'/>
                     </a>
-                    <a href="#">
+                    <a href="https://www.facebook.com/profile.php?id=100086453555381">
                         <FaFacebook className='text-3xl hover:text-primary duration-300'/>
                     </a>
                 </div>
