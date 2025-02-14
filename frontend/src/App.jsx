@@ -29,13 +29,14 @@ import AuthPages from './components/Auth/AuthPages';
 
 
 const BannerData = {
+  
   disount: "30% OFF",
   title: "New Collection",
-  date: "2021-12-31",
+  date: "2025-3-3",
   image: shirmp,
-  title2: "Air Solo Bass",
-  title3: "Winter Sale",
-  title4: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+  title2: "กุ้งแคระ",
+  title3: "Red B",
+  title4: "กุ้งเรดบี (Red Bee Shrimp) เป็นกุ้งแคระน้ำจืดที่ได้รับความนิยมอย่างมากในหมู่นักเลี้ยงตู้ไม้น้ำและนักสะสมกุ้งสวยงาม มีชื่อวิทยาศาสตร์ว่า Caridina cantonensis และเป็นสายพันธุ์ที่เกิดจากการพัฒนาสีของกุ้งคริสตัลเรด (Crystal Red Shrimp) โดยมีลวดลายสีขาวและแดงสลับกันอย่างโดดเด่น",
   bgColor: "#f42c37",
 };
 
@@ -44,10 +45,10 @@ const BannerData2 = {
   title: "New Collection",
   date: "2021-12-31",
   image: fish1,
-  title2: "Air Solo Bass",
-  title3: "Winter Sale",
-  title4: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-  bgColor: "#fdc62e",
+  title2: "ปลา",
+  title3: "Cardinal Tetra",
+  title4: "ปลาคาร์ดินัลเป็นปลาขนาดเล็กที่มีสีสันสดใส ลำตัวมีแถบสีน้ำเงินเมทัลลิกพาดยาวจากหัวจรดหาง และแถบสีแดงสดตั้งแต่ช่วงกลางตัวไปถึงปลายหางมีลักษณะคล้ายกับปลานีออน (Neon Tetra) แต่แถบสีแดงของปลาคาร์ดินัลจะยาวตลอดลำตัว ในขณะที่ของปลานีออนจะยาวเพียงครึ่งตัวขนาดโตเต็มที่ประมาณ 3-5 ซม.อายุขัยเฉลี่ย 2-5 ปี",
+  bgColor: "#e65100",
 };
 
 const App = () => {
