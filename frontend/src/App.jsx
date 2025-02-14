@@ -18,9 +18,13 @@ import AboutFish from './components/About/AboutFish'; // นำเข้าห�
 import Shop from './components/Shop/Shop'; // นำเข้าหน้า Shop
 import ShopShrimp from './components/Shop/ShoptShrimp'; // นำเข้าหน้า Shrimp
 import ShopFish from './components/Shop/ShopFish'; // นำเข้าหน้า Fish
-
+import { CartProvider } from "./components/CartContext/CartContext"; 
 import shirmp from './assets/SA/RedB.png';
 import fish1 from './assets/SA/f4.png';
+import Checkout from "./components/Checkout/Checkout";
+
+import CartPage from './components/CartContext/CartPage';
+import ShippingDetails from './components/ShippingDetails/ShippingDetails';
 
 const BannerData = {
   disount: "30% OFF",
@@ -46,39 +50,44 @@ const BannerData2 = {
 
 const App = () => {
   return (
-    <Router>
-      <div className="bg-white dark:bg-gray-900 dark:text-white duration-300 overflow-hidden">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <Banner data={BannerData} />
-              <Category />
-              <Category2 />
-              <Category3 />
-              <Category4 />
-              <Sevices />
-              
-              <Banner data={BannerData2} />
-              
-              <Blogs />
-              
-            </>
-          } />
-          <Route path="/home" element={<App />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/shrimp" element={<AboutShrimp />} />
-          <Route path="/fish" element={<AboutFish />} />
+    <CartProvider> {/* ✅ เพิ่ม CartProvider ตรงนี้ */}
+      <Router>
+        <div className="bg-white dark:bg-gray-900 dark:text-white duration-300 overflow-hidden">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Hero />
+                <Banner data={BannerData} />
+                <Category />
+                <Category2 />
+                <Category3 />
+                <Category4 />
+                <Sevices />
+                  {/* 🛒 แสดงตะกร้าสินค้า */}
+                <Banner data={BannerData2} />
+                <Blogs />
+              </>
+            } />
+            <Route path="/home" element={<App />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/shrimp" element={<AboutShrimp />} />
+            <Route path="/fish" element={<AboutFish />} />
 
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/shrimp-shop" element={<ShopShrimp />} />
-          <Route path="/fish-shop" element={<ShopFish />} />
-        </Routes>
-        <Partner />
-        <Footer />
-      </div>
-    </Router>
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/shrimp-shop" element={<ShopShrimp />} />
+            <Route path="/fish-shop" element={<ShopFish />} />
+
+            <Route path="/Cart" element={<CartPage />} />
+
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/shipping-details" element={<ShippingDetails />} />
+          </Routes>
+          <Partner />
+          <Footer />
+        </div>
+      </Router>
+    </CartProvider>  
   );
 };
 
