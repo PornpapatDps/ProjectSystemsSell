@@ -3,7 +3,7 @@ import { useCart } from "../CartContext/CartContext";
 import { Link } from "react-router-dom";
 
 const CartPage = () => {
-    const { cartItems, removeFromCart, updateQuantity } = useCart();
+    const { cartItems, removeFromCart, updateQuantity, getSubtotal, getTotalPrice, shippingCost } = useCart();
 
     return (
         <div className="min-h-screen p-6 bg-gray-100 dark:bg-gray-900 dark:text-white font-[Kanit]">
@@ -45,19 +45,16 @@ const CartPage = () => {
                     ))}
 
                     <div className="mt-6 text-right">
-                        <h2 className="text-2xl font-bold">
-                            รวมทั้งหมด: ฿{cartItems.reduce((acc, item) => acc + parseFloat(item.price.replace("฿", "")) * item.quantity, 0)}
-                        </h2>
-                        <button className="mt-3 px-6 py-2 bg-primary text-white rounded">
-                        <Link to="/checkout" className="mt-3 px-6 py-2 bg-primary text-white rounded">
-    ชำระเงิน
-</Link>
+                        <p className="text-lg">ค่าสินค้ารวม: ฿{getSubtotal()}</p>
+                        <p className="text-lg">ค่าจัดส่ง: ฿{cartItems.length > 0 ? shippingCost : 0}</p>
+                        <h2 className="text-2xl font-bold mt-2">รวมทั้งหมด: ฿{getTotalPrice()}</h2>
 
-                        </button>
+                        <Link to="/checkout" className="inline-block mt-3 px-6 py-2 bg-primary text-white rounded">
+                            ชำระเงิน
+                        </Link>
                     </div>
                 </div>
             )}
-
         </div>
     );
 };
