@@ -8,8 +8,14 @@ const Checkout = () => {
     const [slip, setSlip] = useState(null);
     const navigate = useNavigate();
 
-    // คำนวณยอดรวมทั้งหมด
-    const totalAmount = cartItems.reduce((acc, item) => acc + parseFloat(item.price.replace("฿", "")) * item.quantity, 0);
+    // ค่าจัดส่งคงที่
+    const shippingFee = 150;
+
+    // คำนวณยอดรวมสินค้า
+    const subtotal = cartItems.reduce((acc, item) => acc + parseFloat(item.price.replace("฿", "")) * item.quantity, 0);
+
+    // ยอดรวมทั้งหมด (รวมค่าจัดส่ง)
+    const totalAmount = subtotal + shippingFee;
 
     // ฟังก์ชันเลือกไฟล์สลิป
     const handleFileChange = (e) => {
@@ -38,7 +44,9 @@ const Checkout = () => {
                         <span>฿{parseFloat(item.price.replace("฿", "")) * item.quantity}</span>
                     </div>
                 ))}
-                <h2 className="text-2xl font-bold mt-4">💰 ยอดรวม: ฿{totalAmount}</h2>
+                <h2 className="text-2xl font-bold mt-4">💰 ยอดรวมสินค้า: ฿{subtotal}</h2>
+                <h2 className="text-2xl font-bold mt-2">🚚 ค่าจัดส่ง: ฿{shippingFee}</h2>
+                <h2 className="text-3xl font-bold mt-4 text-green-400">💵 ยอดรวมทั้งหมด: ฿{totalAmount}</h2>
             </div>
 
             {/* ตัวเลือกการชำระเงิน */}
