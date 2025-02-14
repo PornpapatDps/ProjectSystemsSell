@@ -15,7 +15,7 @@ const Category = () => {
           flex items-end'>
             <div>
               <div className='mb-4'>
-                <p className='mb-[2px] text-gray-400'>ปลาซิว</p>
+                <p className='mb-[2px] text-white'>ปลาซิว</p>
                 <p className='text-2xl font-semibold mb-[2px]'>ไบจิเต้ </p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Bajite Rasbora</p>
                 <Button
