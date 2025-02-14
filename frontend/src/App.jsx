@@ -8,7 +8,7 @@ import Category3 from './components/Category/Category3';
 import Category4 from './components/Category/Category4';
 import Sevices from './components/Services/Services';
 import Banner from './components/Banner/Banner';
-import Products from './components/Products/Products';
+
 import Blogs from './components/Blogs/Blogs';
 import Partner from './components/Partner/Pathner';
 import Footer from './components/Footer/Footer';
@@ -25,6 +25,8 @@ import Checkout from "./components/Checkout/Checkout";
 
 import CartPage from './components/CartContext/CartPage';
 import ShippingDetails from './components/ShippingDetails/ShippingDetails';
+import AuthPages from './components/Auth/AuthPages';
+
 
 const BannerData = {
   disount: "30% OFF",
@@ -69,6 +71,7 @@ const App = () => {
                 <Blogs />
               </>
             } />
+            
             <Route path="/home" element={<App />} />
             <Route path="/about" element={<About />} />
             <Route path="/shrimp" element={<AboutShrimp />} />
@@ -82,6 +85,10 @@ const App = () => {
 
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/shipping-details" element={<ShippingDetails />} />
+
+            <Route path="/signin" element={<AuthPages isSignUp={false} />} />
+            <Route path="/signup" element={<AuthPages isSignUp={true} />} />
+           
           </Routes>
           <Partner />
           <Footer />
