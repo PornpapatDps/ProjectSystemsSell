@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Banner = ({data}) => {
   return (
     <div className='min-h-[550px] flex items-center justify-center
-    py-12'>
+    py-12 font-[Kanit]' >
       <div
       className='container'>
         <div
@@ -14,7 +14,7 @@ const Banner = ({data}) => {
         <div className='p-6 sm:p-8'>
             <p className='text-sm'>{data.discount}</p>
             <h1 className='uppercase text-4xl lg:text-7xl
-            font-blod'>
+            font-blod '>
                 {""}
                 {data.title}</h1>
             <p className='text-sm'>{data.date}</p>
