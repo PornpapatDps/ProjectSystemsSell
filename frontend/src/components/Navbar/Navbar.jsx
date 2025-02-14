@@ -5,6 +5,8 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
 import { useCart } from "../CartContext/CartContext"; // ✅ ใช้งาน Cart Context
+import { BsPersonCircle } from "react-icons/bs";
+import Button from "../Shared/Button";
 
 const Menulink = [{ id: 1, name: "Home", link: "/" }];
 const DropDownLinks1 = [
@@ -102,15 +104,7 @@ const Navbar = () => {
 
           {/* Navbar Right section */}
           <div className="flex items-center gap-4">
-            {/* Search Bar Section */}
-            <div className="relative group hidden sm:block">
-              <input
-                type="text"
-                placeholder="Search"
-                className="search-bar border rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <IoMdSearch className="text-xl text-gray-600 group-hover:text-primary dark:text-gray-400 absolute top-1/2 -translate-y-1/2 right-3 duration-200" />
-            </div>
+            
 
             {/* Cart Section */}
             <Link to="/cart" className="relative p-3"> {/* ✅ ใช้ <Link> ครอบแทน <button> */}
@@ -125,7 +119,31 @@ const Navbar = () => {
             {/* Dark-mode section */}
             <div>
               <DarkMode />
-            </div>
+            </div>                     
+            {/* Login Button */}
+            <div className="mt-">
+                    <Link to="/signin">  
+                      <Button 
+                        icon={<BsPersonCircle className="text-2xl" /> }
+                        text="Login"
+                        bgColor="bg-primary"
+                        textColor="text-white"               
+                      />
+                    </Link>
+                  </div>
+            {/* Sigup Button */}
+            <div className="mt-">
+                    <Link to="/signup">  
+                      <Button 
+                        icon={<BsPersonCircle className="text-2xl" /> }
+                        text="Signup"
+                        bgColor="bg-gray-400"
+                        textColor="text-white"               
+                      />
+                    </Link>
+                  </div>    
+            
+            
           </div>
         </div>
       </div>
