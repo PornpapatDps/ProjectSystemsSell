@@ -2,7 +2,7 @@ import img1 from '../../../assets/SA/11.png';
 
 import React from 'react'
 
-const KnowFish = () => {
+const KnowFish3 = () => {
   return (
     <div>
        <div className="flex flex-col-3  md:flex-row items-center p-20 font-[Kanit]  justify-center bg-gray-200 dark:bg-gray-800 dark:text-white ">
@@ -17,7 +17,7 @@ const KnowFish = () => {
           <h1 className="text-7xl font-semibold mb-2">ปลาซิวกาแล็คซี่  </h1>
           <p className="text-4xl mb-4">ชื่อวิทยาศาสตร์: Galaxy Rasbora </p>
           <p className="text-3xl mb-4">ถิ่นกำเนิด: เมียนมา</p>
-          <p className="text-3xl mb-4 font-bold">ลักษณะเด่นของปลาสีสันสดใส</p>
+          <p className="text-3xl mb-4 font-bold">ลักษณะเด่นของปลาซิวกาแล็คซี่</p>
           <ul className="text-2xl">
             <li>ขนาดโตเต็มที่ประมาณ 2-2.5 ซม.</li>
             <li>ลำตัวมีลวดลายจุดคล้ายดวงดาวบนท้องฟ้า</li>
@@ -39,4 +39,4 @@ const KnowFish = () => {
   )
 }
 
-export default KnowFish
+export default KnowFish3
