@@ -2,7 +2,7 @@ import img1 from '../../../assets/SA/16.png';
 
 import React from 'react'
 
-const KnowFish = () => {
+const KnowFish8 = () => {
   return (
     <div>
        <div className="flex flex-col-3  md:flex-row items-center p-20 font-[Kanit]  justify-center bg-gray-200 dark:bg-gray-800 dark:text-white ">
@@ -17,7 +17,7 @@ const KnowFish = () => {
           <h1 className="text-7xl font-semibold mb-2">ปลาเรนโบว์นีออนสั้น </h1>
           <p className="text-4xl mb-4">ชื่อวิทยาศาสตร์:Dwarf Neon Rainbowfish - Melanotaenia praecox</p>
           <p className="text-3xl mb-4">ถิ่นกำเนิด: ปาปัวนิวกินี</p>
-          <p className="text-3xl mb-4 font-bold">ลักษณะเด่น</p>
+          <p className="text-3xl mb-4 font-bold">ลักษณะเด่นปลาเรนโบว์นีออนสั้น</p>
           <ul className="text-2xl">
             <li>ลำตัวมีประกายสีฟ้าและแวววาว</li>
             <li>ครีบสีแดงสดหรือน้ำเงินเข้ม</li>
@@ -39,4 +39,4 @@ const KnowFish = () => {
   )
 }
 
-export default KnowFish
+export default KnowFish8
