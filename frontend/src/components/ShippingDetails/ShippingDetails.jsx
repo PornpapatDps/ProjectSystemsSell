@@ -1,98 +1,122 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../CartContext/CartContext";
+import thaiDistricts from "../data/thaiDistricts";
 
 const ShippingDetails = () => {
-    const [shippingDetails, setShippingDetails] = useState({ 
-        name: "", 
-        surname: "", 
-        email: "",  // เพิ่ม email
-        phone: "", 
-        houseNumber: "", 
-        street: "", 
-        postalCode: "", 
-        province: "", 
-        district: "", 
-        subDistrict: "" 
-    });
-
+    const { cartItems, clearCart } = useCart();
+    const [customerName, setCustomerName] = useState("");
+    const [customerPhone, setCustomerPhone] = useState("");
+    const [customerNumAddress, setCustomerNumAddress] = useState("");
+    const [customerAddress, setCustomerAddress] = useState("");
+    const [province, setProvince] = useState("");
+    const [district, setDistrict] = useState("");
+    const [subdistrict, setSubdistrict] = useState("");
+    const [zipcode, setZipcode] = useState("");
+    const [status, setStatus] = useState("");
     const navigate = useNavigate();
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        let updatedValue = value;
-        
-        // Validation
-        if (name === "name" || name === "surname" || name === "province") {
-            updatedValue = value.slice(0, 100);
-        } else if (name === "phone" || name === "postalCode") {
-            updatedValue = value.replace(/[^0-9]/g, "").slice(0, name === "phone" ? 10 : 5);
-        } else if (name === "houseNumber") {
-            updatedValue = value.slice(0, 10);
-        } else if (name === "street" || name === "district" || name === "subDistrict") {
-            updatedValue = value.slice(0, 50);
-        } else if (name === "email") {
-            updatedValue = value.slice(0, 100); // จำกัดความยาว email
-        }
-        
-        setShippingDetails({ ...shippingDetails, [name]: updatedValue });
+    const handleProvinceChange = (e) => {
+        const selectedProvince = e.target.value;
+        setProvince(selectedProvince);
+        setDistrict("");
+        setSubdistrict("");
+        setZipcode("");
     };
 
-    const validateEmail = (email) => {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // ตรวจสอบรูปแบบอีเมล
+    const handleDistrictChange = (e) => {
+        const selectedDistrict = e.target.value;
+        setDistrict(selectedDistrict);
+        setSubdistrict("");
+        setZipcode(thaiDistricts[province]?.zipcodes[selectedDistrict] || ""); // ✅ แก้ให้ดึงรหัสไปรษณีย์จาก "เขต"
+    };
+
+    const handleSubdistrictChange = (e) => {
+        setSubdistrict(e.target.value);
     };
 
     const handleConfirmShipping = () => {
-        const { name, surname, email, phone, houseNumber, street, postalCode, province, district, subDistrict } = shippingDetails;
-        if (!name || !surname || !email || !phone || !houseNumber || !street || !postalCode || !province || !district || !subDistrict) {
-            alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+        const requiredFields = [province, district, subdistrict, zipcode, customerName, customerPhone, customerNumAddress, customerAddress];
+
+        if (requiredFields.some(field => !field)) {
+            alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
             return;
         }
-        if (!validateEmail(email)) {
-            alert("กรุณากรอกอีเมลให้ถูกต้อง");
-            return;
-        }
-        alert("ข้อมูลการจัดส่งถูกบันทึกเรียบร้อย!");
-        navigate("/"); // กลับไปหน้าแรก
+
+        setStatus("กำลังเตรียมสินค้า");
+
+        setTimeout(() => {
+            alert("สินค้าของคุณกำลังเตรียมจัดส่ง!");
+            navigate("/shipping-report");
+            clearCart();
+        }, 2000);
     };
 
     return (
-        <div className="min-h-screen p-6 bg-gray-100 dark:bg-gray-900 dark:text-gray-900 font-[Kanit]">
-            <h1 className="text-3xl font-bold text-center mb-6">🚚 กรอกข้อมูลการจัดส่ง</h1>
-            
+        <div className="min-h-screen p-6 bg-gray-100 dark:bg-gray-900 dark:text-white font-[Kanit]">
+            <h1 className="text-3xl font-bold text-center mb-6">📦 กรอกข้อมูลการจัดส่ง</h1>
             <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
                 
-                <label className="block text-lg font-semibold">ชื่อ</label>
-                <input type="text" name="name" value={shippingDetails.name} onChange={handleChange} className="w-full p-2 border rounded mt-2" />
+                <input type="text" placeholder="📍 ชื่อ-นามสกุล" className="w-full p-3 mt-2 border rounded" value={customerName} maxLength={100} onChange={(e) => {
+                    const value = e.target.value;
+                    if (/^[A-Za-zก-ฮะ-์\s]*$/.test(value)) setCustomerName(value);
+                }} />
 
-                <label className="block text-lg font-semibold mt-4">นามสกุล</label>
-                <input type="text" name="surname" value={shippingDetails.surname} onChange={handleChange} className="w-full p-2 border rounded mt-2" />
+                <input type="text" placeholder="📞 เบอร์โทรศัพท์ (10 ตัวเลข)" className="w-full p-3 mt-2 border rounded" value={customerPhone} maxLength={10} onChange={(e) => {
+                    const value = e.target.value;
+                    if (/^\d{0,10}$/.test(value)) setCustomerPhone(value);
+                }} />
 
-                <label className="block text-lg font-semibold mt-4">อีเมล</label>
-                <input type="email" name="email" value={shippingDetails.email} onChange={handleChange} className="w-full p-2 border rounded mt-2" />
+                <input type="text" placeholder="🏠 บ้านเลขที่ (ตัวเลข 5 ตัว และ '/' ได้)" className="w-full p-3 mt-2 border rounded" value={customerNumAddress} maxLength={10} onChange={(e) => {
+                    const value = e.target.value;
+                    if (/^\d{0,5}\/?\d{0,5}$/.test(value)) setCustomerNumAddress(value);
+                }} />
 
-                <label className="block text-lg font-semibold mt-4">เบอร์โทร</label>
-                <input type="tel" name="phone" value={shippingDetails.phone} onChange={handleChange} className="w-full p-2 border rounded mt-2" />
+                <input type="text" placeholder="📍 ที่อยู่เพิ่มเติม (สูงสุด 50 ตัวอักษร)" className="w-full p-3 mt-2 border rounded" value={customerAddress} maxLength={50} onChange={(e) => setCustomerAddress(e.target.value)} />
 
-                <label className="block text-lg font-semibold mt-4">บ้านเลขที่</label>
-                <input type="text" name="houseNumber" value={shippingDetails.houseNumber} onChange={handleChange} className="w-full p-2 border rounded mt-2" />
+                <select className="w-full p-3 mt-2 border rounded" value={province} onChange={handleProvinceChange}>
+                    <option value="">เลือกจังหวัด</option>
+                    {Object.keys(thaiDistricts).map((prov) => (
+                        <option key={prov} value={prov}>{prov}</option>
+                    ))}
+                </select>
 
-                <label className="block text-lg font-semibold mt-4">ถนน / ซอย</label>
-                <input type="text" name="street" value={shippingDetails.street} onChange={handleChange} className="w-full p-2 border rounded mt-2" />
+                {province && (
+                    <select className="w-full p-3 mt-2 border rounded" value={district} onChange={handleDistrictChange}>
+                        <option value="">เลือกเขต/อำเภอ</option>
+                        {thaiDistricts[province]?.districts.length > 0 
+                            ? thaiDistricts[province]?.districts.map((dist) => (
+                                <option key={dist} value={dist}>{dist}</option>
+                            ))
+                            : <option value="">ไม่มีข้อมูล</option>
+                        }
+                    </select>
+                )}
 
-                <label className="block text-lg font-semibold mt-4">เขต / อำเภอ</label>
-                <input type="text" name="district" value={shippingDetails.district} onChange={handleChange} className="w-full p-2 border rounded mt-2" />
+                {district && (
+                    <select className="w-full p-3 mt-2 border rounded" value={subdistrict} onChange={handleSubdistrictChange}>
+                        <option value="">เลือกแขวง/ตำบล</option>
+                        {thaiDistricts[province]?.subdistricts[district]?.map((sub) => (
+                            <option key={sub} value={sub}>{sub}</option>
+                        ))}
+                    </select>
+                )}
 
-                <label className="block text-lg font-semibold mt-4">แขวง / ตำบล</label>
-                <input type="text" name="subDistrict" value={shippingDetails.subDistrict} onChange={handleChange} className="w-full p-2 border rounded mt-2" />
+                {district && zipcode && (
+                    <input type="text" className="w-full p-3 mt-2 border rounded bg-gray-200" value={zipcode} readOnly />
+                )}
 
-                <label className="block text-lg font-semibold mt-4">จังหวัด</label>
-                <input type="text" name="province" value={shippingDetails.province} onChange={handleChange} className="w-full p-2 border rounded mt-2" />
-                
-                <label className="block text-lg font-semibold mt-4">รหัสไปรษณีย์</label>
-                <input type="text" name="postalCode" value={shippingDetails.postalCode} onChange={handleChange} className="w-full p-2 border rounded mt-2" />
+            </div>
 
-                <button onClick={handleConfirmShipping} className="mt-6 px-6 py-2 bg-green-600 text-white rounded text-xl w-full">
-                    ✅ ยืนยันข้อมูลจัดส่ง
+            {status && (
+                <div className="text-center mt-6 text-lg text-blue-600">
+                    ⏳ {status}...
+                </div>
+            )}
+
+            <div className="text-center mt-6">
+                <button onClick={handleConfirmShipping} className="px-6 py-2 bg-green-600 text-white rounded text-xl">
+                    ✅ ยืนยันข้อมูลการจัดส่ง
                 </button>
             </div>
         </div>
