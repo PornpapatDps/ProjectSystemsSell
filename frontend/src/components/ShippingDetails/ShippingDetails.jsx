@@ -56,33 +56,34 @@ const ShippingDetails = () => {
         <div className="min-h-screen p-6 bg-gray-100 dark:bg-gray-900 dark:text-white font-[Kanit]">
             <h1 className="text-3xl font-bold text-center mb-6">📦 กรอกข้อมูลการจัดส่ง</h1>
             <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
-                
-                <input type="text" placeholder="📍 ชื่อ-นามสกุล" className="w-full p-3 mt-2 border rounded" value={customerName} maxLength={100} onChange={(e) => {
+                <div className="text-base font-bold">ชื่อ-นามสกุล</div>
+                <input type="text" placeholder="📍 ชื่อ-นามสกุล" className="w-full p-3 mt-2 border rounded bg-gray-100 dark:bg-gray-100 dark:text-gray-600 font-medium" value={customerName} maxLength={100} onChange={(e) => {
                     const value = e.target.value;
                     if (/^[A-Za-zก-ฮะ-์\s]*$/.test(value)) setCustomerName(value);
                 }} />
-
-                <input type="text" placeholder="📞 เบอร์โทรศัพท์ (10 ตัวเลข)" className="w-full p-3 mt-2 border rounded" value={customerPhone} maxLength={10} onChange={(e) => {
+                
+                <div className="text-base font-bold mt-4">เบอร์โทรศัพท์ </div>
+                <input type="text" placeholder="📞 เบอร์โทรศัพท์" className="w-full p-3 mt-2 border rounded bg-gray-100 dark:bg-gray-100 dark:text-gray-600 font-medium" value={customerPhone} maxLength={10} onChange={(e) => {
                     const value = e.target.value;
                     if (/^\d{0,10}$/.test(value)) setCustomerPhone(value);
                 }} />
-
-                <input type="text" placeholder="🏠 บ้านเลขที่ (ตัวเลข 5 ตัว และ '/' ได้)" className="w-full p-3 mt-2 border rounded" value={customerNumAddress} maxLength={10} onChange={(e) => {
+                <div className="text-base font-bold mt-4">บ้านเลขที่ </div>
+                <input type="text" placeholder="🏠 บ้านเลขที่ (ตัวเลข 5 ตัว และ '/' ได้)" className="w-full p-3 mt-2 border rounded bg-gray-100 dark:bg-gray-100 dark:text-gray-600 font-medium" value={customerNumAddress} maxLength={10} onChange={(e) => {
                     const value = e.target.value;
                     if (/^\d{0,5}\/?\d{0,5}$/.test(value)) setCustomerNumAddress(value);
                 }} />
-
-                <input type="text" placeholder="📍 ที่อยู่เพิ่มเติม (สูงสุด 50 ตัวอักษร)" className="w-full p-3 mt-2 border rounded" value={customerAddress} maxLength={50} onChange={(e) => setCustomerAddress(e.target.value)} />
-
-                <select className="w-full p-3 mt-2 border rounded" value={province} onChange={handleProvinceChange}>
+                <div className="text-base font-bold mt-4">ที่อยู่เพิ่มเติม</div>
+                <input type="text" placeholder="📍 ที่อยู่เพิ่มเติม (สูงสุด 50 ตัวอักษร)" className="w-full p-3 mt-2 border rounded bg-gray-100 dark:bg-gray-100 dark:text-gray-600 font-medium" value={customerAddress} maxLength={50} onChange={(e) => setCustomerAddress(e.target.value)} />
+                <div className="text-base font-bold mt-4">เลือกจังหวัด</div>
+                <select className="w-full p-3 mt-2 border rounded bg-gray-100 dark:bg-gray-100 dark:text-gray-600 font-medium" value={province} onChange={handleProvinceChange}>
                     <option value="">เลือกจังหวัด</option>
                     {Object.keys(thaiDistricts).map((prov) => (
                         <option key={prov} value={prov}>{prov}</option>
                     ))}
                 </select>
-
+                <div className="text-base font-bold mt-4">เลือกเขต/อำเภอ</div>
                 {province && (
-                    <select className="w-full p-3 mt-2 border rounded" value={district} onChange={handleDistrictChange}>
+                    <select className="w-full p-3 mt-2 border rounded bg-gray-100 dark:bg-gray-100 dark:text-gray-600 font-medium" value={district} onChange={handleDistrictChange}>
                         <option value="">เลือกเขต/อำเภอ</option>
                         {thaiDistricts[province]?.districts.length > 0 
                             ? thaiDistricts[province]?.districts.map((dist) => (
@@ -92,18 +93,18 @@ const ShippingDetails = () => {
                         }
                     </select>
                 )}
-
+                <div className="text-base font-bold mt-4">เลือกแขวง/ตำบล</div>
                 {district && (
-                    <select className="w-full p-3 mt-2 border rounded" value={subdistrict} onChange={handleSubdistrictChange}>
+                    <select className="w-full p-3 mt-2 border rounded bg-gray-100 dark:bg-gray-100 dark:text-gray-600 font-medium" value={subdistrict} onChange={handleSubdistrictChange}>
                         <option value="">เลือกแขวง/ตำบล</option>
                         {thaiDistricts[province]?.subdistricts[district]?.map((sub) => (
                             <option key={sub} value={sub}>{sub}</option>
                         ))}
                     </select>
                 )}
-
+                <div className="text-base font-bold mt-4">รหัสไปรษณีย์</div>
                 {district && zipcode && (
-                    <input type="text" className="w-full p-3 mt-2 border rounded bg-gray-200" value={zipcode} readOnly />
+                    <input type="text" className="w-full p-3 mt-2 border rounded  bg-gray-100 dark:bg-gray-100 dark:text-gray-600 font-medium" value={zipcode} readOnly />
                 )}
 
             </div>
