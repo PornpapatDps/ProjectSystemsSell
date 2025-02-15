@@ -2,7 +2,7 @@ import img1 from '../../../assets/SA/15.png';
 
 import React from 'react'
 
-const KnowFish = () => {
+const KnowFish7 = () => {
   return (
     <div>
        <div className="flex flex-col-3  md:flex-row items-center p-20 font-[Kanit]  justify-center bg-gray-200 dark:bg-gray-800 dark:text-white ">
@@ -17,7 +17,7 @@ const KnowFish = () => {
           <h1 className="text-7xl font-semibold mb-2">ปลาคาดินัลเผือก </h1>
           <p className="text-4xl mb-4">ชื่อวิทยาศาสตร์: Albino Cardinal Tetra</p>
           <p className="text-3xl mb-4">ถิ่นกำเนิด: -</p>
-          <p className="text-3xl mb-4 font-bold">ลักษณะเด่น</p>
+          <p className="text-3xl mb-4 font-bold">ลักษณะเด่นปลาคาดินัลเผือก</p>
           <ul className="text-2xl">
             <li>ลักษณะเหมือน ปลาคาดินัล แต่มีสีเผือก</li>
             <li>ดวงตาแดงและลำตัวมีแถบสีซีดกว่าปกติ</li>
@@ -25,7 +25,7 @@ const KnowFish = () => {
             <li></li>
           </ul>
           <br/>
-          <p className="text-3xl mb-4 font-bold">การเลี้ยงปลาซิวไบจิเต้</p>
+          <p className="text-3xl mb-4 font-bold">การเลี้ยงปลาคาดินัลเผือก</p>
           <ul className="text-2xl">
             <li>✔  ขนาดตู้ปลา: 10-15 แกลลอนขึ้นไป</li>
             <li>✔ อุณหภูมิ: 24-28°C</li>
@@ -39,4 +39,4 @@ const KnowFish = () => {
   )
 }
 
-export default KnowFish
+export default KnowFish7
