@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Links } from 'react-router-dom';
 import Image1 from "../../assets/SA/f1.png";
 import Image2 from "../../assets/SA/f3.png";
 import Image3 from "../../assets/SA/f2.png";
@@ -30,16 +30,19 @@ const AboutFish = () => {
           <div className=' py-10 pl-5 bg-gradient-to-br from-black/90 to-brandBlue/90 text-white rounded-3xl relative h-[320px]
           flex items-end'>
             <div>
-              <div className='mb-4'>
-                <p className='mb-[2px] text-white-700'>ปลาน้ำจืด</p>
-                <p className='text-2xl font-semibold mb-[2px]'>นีออน</p>
-                <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Neon Tetra</p>
-                <Button
-                  text="Browser"
-                  bgColor={"bg-white"}
-                  textColor={"text-primary"}
-                />
-              </div>
+            <div className="mb-4">
+  <p className="mb-[2px] text-white-700">ปลาน้ำจืด</p>
+  <p className="text-2xl font-semibold mb-[2px]">นีออน</p>
+  <p className="text-4xl xl:text-5xl font-bold opacity-20 mb-2">Neon Tetra</p>
+  <Link to="/KnowFish5">
+    <Button
+      text="Browse"
+      bgColor={"bg-white"}
+      textColor={"text-primary"}
+    />
+  </Link>
+</div>
+
             </div>
             <img src={Image5} alt="" className='w-[2500px] h-[200px] absolute -right-20 lg:buttom-[2px]' />
           </div>
@@ -52,11 +55,12 @@ const AboutFish = () => {
                 <p className='mb-[2px] text-white'>ปลาซิว</p>
                 <p className='text-2xl font-semibold mb-[2px]'>ฟ้า</p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Blue Neon Rasbora</p>
+                <Link to="/KnowFish6">
                 <Button
                   text="Browser"
                   bgColor={"bg-white"}
                   textColor={"text-primary"}
-                />
+                /></Link>
               </div>
             </div>
             <img src={Image6} alt="" className='w-[350px] h-[250px] absolute -right-9 lg:top-[8px] ' />
@@ -69,11 +73,12 @@ const AboutFish = () => {
                 <p className='mb-[2px] text-white-400'>ปลาเรนโบว์</p>
                 <p className='text-2xl font-semibold mb-[2px]'>นีออนสั้น</p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Short Body Neon Rainbow</p>
+                <Link to="/KnowFish8">
                 <Button
                   text="Browser"
                   bgColor={"bg-primary"}
                   textColor={"text-white"}
-                />
+                />  </Link>
               </div>
             </div>
             <img src={Image7} alt="" className='w-[300px] h-[250px] absolute -right-2 lg:top-[10px]' />
@@ -86,11 +91,12 @@ const AboutFish = () => {
                 <p className='mb-[2px] text-white-400'>ปลาน้ำจืด</p>
                 <p className='text-2xl font-semibold mb-[2px]'>คาร์ดินัลเผือก</p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Albino Cardinal Tetra</p>
+                <Link to="/KnowFish7">
                 <Button
                   text="Browser"
                   bgColor={"bg-white"}
                   textColor={"text-primary"}
-                />
+                /> </Link>
               </div>
             </div>
             <img src={Image8} alt="" className='w-[300px] h-[250px] absolute -right-5 lg:top-[30px]' />
@@ -112,11 +118,12 @@ const AboutFish = () => {
                 <p className='mb-[2px] text-gray-400'>ปลาซิว</p>
                 <p className='text-2xl font-semibold mb-[2px]'>ไบจิเต้ </p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Bajite Rasbora</p>
+                <Link to="/KnowFish1">
                 <Button
                   text="Browser"
                   bgColor={"bg-white"}
                   textColor={"text-primary"}
-                />
+                /> </Link>
               </div>
             </div>
             <img src={Image1} alt="" className='w-[400px] h-[300px] absolute -right-16 lg:top-[10px]' />
@@ -129,11 +136,12 @@ const AboutFish = () => {
                 <p className='mb-[2px] text-white'>ปลาซิว</p>
                 <p className='text-2xl font-semibold mb-[2px]'>เพชรน้อย</p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Diamond Rasbora</p>
+                <Link to="/KnowFish2">
                 <Button
                   text="Browser"
                   bgColor={"bg-white"}
                   textColor={"text-brandBlues"}
-                />
+                /> </Link>
               </div>
             </div>
             <img src={Image3} alt="" className='w-[400px] h-[300px] absolute -right-16 lg:top-[10px] ' />
@@ -146,11 +154,12 @@ const AboutFish = () => {
                 <p className=' text-white'>ปลาน้ำจืด</p>
                 <p className='text-2xl font-semibold mb-[2px]'>คาร์ดินัล</p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-20'>Cardinal Tetra</p>
+                <Link to="/KnowFish4">
                 <Button
                   text="Browser"
                   bgColor={"bg-white"}
                   textColor={"text-primary"}
-                />
+                /> </Link>
               </div>
             </div>
             <img src={Image4} alt="" className='w-[300px] h-[250px] absolute -right-5 lg:top-[10px] ' />
@@ -163,11 +172,12 @@ const AboutFish = () => {
                 <p className=' text-white'>ปลาซิว</p>
                 <p className='text-2xl font-semibold mb-[2px]'>กาแล็คซี่ </p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-20'>Galaxy Rasbora</p>
+                <Link to="/KnowFish3">
                 <Button
                   text="Browser"
                   bgColor={"bg-primary"}
                   textColor={"text-white"}
-                />
+                /> </Link>
               </div>
             </div>
             <img src={Image2} alt="" className='w-[450px] h-[250px] absolute -right-5 lg:top-[40px] ' />
