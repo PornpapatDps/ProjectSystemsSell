@@ -29,7 +29,7 @@ import AuthPages from './components/Auth/AuthPages';
 import ShippingReport from './components/ShippingReport/ShippingReport';
 import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation';
 
-import Shrimp from './components/About/Shrimp';
+
 import KnowFish from './components/About/KnowFish/KnowFish';
 import KnowFish2 from './components/About/KnowFish/KnowFish2';
 import KnowFish3 from './components/About/KnowFish/KnowFish3';
@@ -38,6 +38,16 @@ import KnowFish5 from './components/About/KnowFish/KnowFish5';
 import KnowFish6 from './components/About/KnowFish/KnowFish6';
 import KnowFish7 from './components/About/KnowFish/KnowFish7';
 import KnowFish8 from './components/About/KnowFish/KnowFish8';
+
+import KnowShrimp from './components/About/KnowShrimp/KnowShrimp';
+import KnowShrimp2 from './components/About/KnowShrimp/KnowShrimp2';
+import KnowShrimp3 from './components/About/KnowShrimp/KnowShrimp3';
+import KnowShrimp4 from './components/About/KnowShrimp/KnowShrimp4';
+import KnowShrimp5 from './components/About/KnowShrimp/KnowShrimp5';
+import KnowShrimp6 from './components/About/KnowShrimp/KnowShrimp6';
+import KnowShrimp7 from './components/About/KnowShrimp/KnowShrimp7';
+import KnowShrimp8 from './components/About/KnowShrimp/KnowShrimp8';
+
 
 
 
@@ -100,8 +110,15 @@ const App = () => {
             <Route path="/KnowFish7" element={<KnowFish7 />} />
             <Route path="/KnowFish8" element={<KnowFish8 />} />
 
+            <Route path="/KnowShrimp1" element={<KnowShrimp />} />
+            <Route path="/KnowShrimp2" element={<KnowShrimp2 />} />
+            <Route path="/KnowShrimp3" element={<KnowShrimp3 />} />
+            <Route path="/KnowShrimp4" element={<KnowShrimp4 />} />
+            <Route path="/KnowShrimp5" element={<KnowShrimp5 />} />
+            <Route path="/KnowShrimp6" element={<KnowShrimp6 />} />
+            <Route path="/KnowShrimp7" element={<KnowShrimp7 />} />
+            <Route path="/KnowShrimp8" element={<KnowShrimp8 />} />
             
-            <Route path="/shrimpKnowle" element={<Shrimp />} />
 
             <Route path="/shop" element={<Shop />} />
             <Route path="/shrimp-shop" element={<ShopShrimp />} />
