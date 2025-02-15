@@ -4,6 +4,8 @@ import Image2 from "../../assets/SA/f3.png";
 import Image3 from "../../assets/SA/f2.png";
 import Image4 from "../../assets/SA/f4.png";
 import Button from "../Shared/Button";
+import { Link, Links } from 'react-router-dom';
+
 const Category = () => {
   return (
     <div className='py-3'>
@@ -18,11 +20,12 @@ const Category = () => {
                 <p className='mb-[2px] text-white'>ปลาซิว</p>
                 <p className='text-2xl font-semibold mb-[2px]'>ไบจิเต้ </p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Bajite Rasbora</p>
+                <Link to="/KnowFish1"> 
                 <Button
                   text="Browser"
                   bgColor={"bg-white"}
                   textColor={"text-primary"}
-                />
+                /> </Link>
               </div>
             </div>
             <img src={Image1} alt="" className='w-[400px] h-[300px] absolute -right-16 lg:top-[10px]' />
@@ -35,11 +38,12 @@ const Category = () => {
                 <p className='mb-[2px] text-white'>ปลาซิว</p>
                 <p className='text-2xl font-semibold mb-[2px]'>เพชรน้อย</p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Diamond Rasbora</p>
+                <Link to="/KnowFish2">
                 <Button
                   text="Browser"
                   bgColor={"bg-white"}
                   textColor={"text-brandBlues"}
-                />
+                /> </Link>
               </div>
             </div>
             <img src={Image3} alt="" className='w-[400px] h-[300px] absolute -right-16 lg:top-[10px] ' />
@@ -52,11 +56,12 @@ const Category = () => {
                 <p className=' text-white'>ปลาน้ำจืด</p>
                 <p className='text-2xl font-semibold mb-[2px]'>คาร์ดินัล</p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-20'>Cardinal Tetra</p>
+                <Link to="/KnowFish4">
                 <Button
                   text="Browser"
                   bgColor={"bg-white"}
                   textColor={"text-primary"}
-                />
+                /> </Link>
               </div>
             </div>
             <img src={Image4} alt="" className='w-[300px] h-[250px] absolute -right-5 lg:top-[10px] ' />
@@ -69,11 +74,12 @@ const Category = () => {
                 <p className=' text-white'>ปลาซิว</p>
                 <p className='text-2xl font-semibold mb-[2px]'>กาแล็คซี่ </p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-20'>Galaxy Rasbora</p>
+                <Link to="/KnowFish3">
                 <Button
                   text="Browser"
                   bgColor={"bg-primary"}
                   textColor={"text-white"}
-                />
+                /> </Link>
               </div>
             </div>
             <img src={Image2} alt="" className='w-[450px] h-[250px] absolute -right-5 lg:top-[40px] ' />
