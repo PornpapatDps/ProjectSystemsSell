@@ -12,8 +12,8 @@ const OrderConfirmation = () => {
   useEffect(() => {
     if (orderDetails) {
       const existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
+      const existingProducts = JSON.parse(localStorage.getItem("products")) || [];
   
-      // ตรวจสอบว่าออเดอร์มีอยู่แล้วหรือไม่
       const isOrderExists = existingOrders.some(order => order.orderId === orderDetails.orderId);
   
       if (!isOrderExists) {
@@ -33,9 +33,21 @@ const OrderConfirmation = () => {
   
         const updatedOrders = [...existingOrders, newOrder];
         localStorage.setItem("orders", JSON.stringify(updatedOrders));
+  
+        // 🔥 อัปเดตสินค้าคงคลัง
+        const updatedProducts = existingProducts.map(product => {
+          const orderedItem = orderDetails.items.find(item => item.id === product.id);
+          if (orderedItem) {
+            return { ...product, stock: product.stock - orderedItem.quantity };
+          }
+          return product;
+        });
+  
+        localStorage.setItem("products", JSON.stringify(updatedProducts));
       }
     }
   }, [orderDetails]);
+  
   
 
   const handleConfirmOrder = () => {
