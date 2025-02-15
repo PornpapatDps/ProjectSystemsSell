@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; //หน้าการจัดส่ง 
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../CartContext/CartContext";
 import thaiDistricts from "../data/thaiDistricts";
@@ -28,8 +28,12 @@ const ShippingDetails = () => {
         const selectedDistrict = e.target.value;
         setDistrict(selectedDistrict);
         setSubdistrict("");
-        setZipcode(thaiDistricts[province]?.zipcodes[selectedDistrict] || ""); // ✅ แก้ให้ดึงรหัสไปรษณีย์จาก "เขต"
+    
+        // 🔥 ตรวจสอบว่ามีรหัสไปรษณีย์หรือไม่
+        const zipcodeData = thaiDistricts[province]?.zipcodes?.[selectedDistrict] || "";
+        setZipcode(zipcodeData);
     };
+    
 
     const handleSubdistrictChange = (e) => {
         setSubdistrict(e.target.value);
@@ -37,20 +41,37 @@ const ShippingDetails = () => {
 
     const handleConfirmShipping = () => {
         const requiredFields = [province, district, subdistrict, zipcode, customerName, customerPhone, customerNumAddress, customerAddress];
-
+    
         if (requiredFields.some(field => !field)) {
             alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
             return;
         }
-
+    
+        // 🔥 บันทึกข้อมูลการจัดส่งลง LocalStorage
+        const shippingDetails = {
+            customerName,
+            customerPhone,
+            customerNumAddress,
+            customerAddress,
+            province,
+            district,
+            subdistrict,
+            zipcode,
+            status: "กำลังเตรียมสินค้า",
+            createdAt: new Date().toISOString(),
+        };
+    
+        localStorage.setItem("shippingDetails", JSON.stringify(shippingDetails));
+    
         setStatus("กำลังเตรียมสินค้า");
-
+    
         setTimeout(() => {
             alert("สินค้าของคุณกำลังเตรียมจัดส่ง!");
-            navigate("/shipping-report");
+            navigate("/shipping-report"); // 🔥 เปลี่ยนเส้นทางไปที่หน้ารายงานการจัดส่ง
             clearCart();
         }, 2000);
     };
+    
 
     return (
         <div className="min-h-screen p-6 bg-gray-100 dark:bg-gray-900 dark:text-white font-[Kanit]">
