@@ -55,8 +55,8 @@ const Checkout = () => {
             <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow mt-6">
                 <h2 className="text-2xl font-semibold mb-4">🔍 เลือกช่องทางการชำระเงิน</h2>
                 <div className="flex gap-4">
-                    <button onClick={() => setPaymentMethod("bank")} className={`px-4 py-2 rounded ${paymentMethod === "bank" ? "bg-primary text-white" : "bg-gray-200"}`}>โอนผ่านธนาคาร</button>
-                    <button onClick={() => setPaymentMethod("qr") } className={`px-4 py-2 rounded ${paymentMethod === "qr" ? "bg-primary text-white" : "bg-gray-200"}`}>QR Code</button>
+                    <button onClick={() => setPaymentMethod("bank")} className={`px-4 py-2 rounded ${paymentMethod === "bank" ? "bg-primary text-white" : "bg-gray-200 text-gray-600"}`}>โอนผ่านธนาคาร</button>
+                    <button onClick={() => setPaymentMethod("qr") } className={`px-4 py-2 rounded ${paymentMethod === "qr" ? "bg-primary text-white" : "bg-gray-200 text-gray-600"}`}>QR Code</button>
                 </div>
             </div>
 
