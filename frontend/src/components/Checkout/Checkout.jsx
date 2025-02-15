@@ -3,7 +3,7 @@ import { useCart } from "../CartContext/CartContext";
 import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
-    const { cartItems } = useCart();
+    const { cartItems, clearCart } = useCart();
     const [paymentMethod, setPaymentMethod] = useState("bank");
     const [slip, setSlip] = useState(null);
     const navigate = useNavigate();
@@ -30,12 +30,14 @@ const Checkout = () => {
         }
         alert("การชำระเงินสำเร็จ! กรุณากรอกข้อมูลการจัดส่ง");
         navigate("/shipping-details"); // เปลี่ยนเส้นทางไปยังหน้า Shipping Details
+        clearCart();
     };
 
     return (
         <div className="min-h-screen p-6 bg-gray-100 dark:bg-gray-900 dark:text-white font-[Kanit]">
             <h1 className="text-3xl font-bold text-center mb-6">💳 ชำระเงิน</h1>
-            
+
+            {/* รายการสินค้า */}
             <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
                 <h2 className="text-2xl font-semibold mb-4">🛍 รายการสินค้า</h2>
                 {cartItems.map((item) => (
@@ -49,7 +51,7 @@ const Checkout = () => {
                 <h2 className="text-3xl font-bold mt-4 text-green-400">💵 ยอดรวมทั้งหมด: ฿{totalAmount}</h2>
             </div>
 
-            {/* ตัวเลือกการชำระเงิน */}
+            {/* เลือกช่องทางการชำระเงิน */}
             <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow mt-6">
                 <h2 className="text-2xl font-semibold mb-4">🔍 เลือกช่องทางการชำระเงิน</h2>
                 <div className="flex gap-4">
@@ -58,7 +60,7 @@ const Checkout = () => {
                 </div>
             </div>
 
-            {/* แสดงรายละเอียดตามช่องทางที่เลือก */}
+            {/* รายละเอียดช่องทางการชำระเงิน */}
             {paymentMethod === "bank" ? (
                 <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow mt-6">
                     <h2 className="text-2xl font-semibold">🏦 ข้อมูลบัญชีธนาคาร</h2>
