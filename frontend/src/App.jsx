@@ -26,6 +26,9 @@ import Checkout from "./components/Checkout/Checkout";
 import CartPage from './components/CartContext/CartPage';
 import ShippingDetails from './components/ShippingDetails/ShippingDetails';
 import AuthPages from './components/Auth/AuthPages';
+import ShippingReport from './components/ShippingReport/ShippingReport';
+import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation';
+
 
 
 const BannerData = {
@@ -89,7 +92,10 @@ const App = () => {
 
             <Route path="/signin" element={<AuthPages isSignUp={false} />} />
             <Route path="/signup" element={<AuthPages isSignUp={true} />} />
-           
+            <Route path="/shipping-report" element={<ShippingReport />} />
+
+            <Route path="/order-confirmation" element={<OrderConfirmation />} />
+            
           </Routes>
           <Partner />
           <Footer />
