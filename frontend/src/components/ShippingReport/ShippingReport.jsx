@@ -1,44 +1,42 @@
 import React, { useEffect, useState } from "react";
 
 const ShippingReport = () => {
-    const [shippingInfo, setShippingInfo] = useState(null);
-
+    const [shippingReports, setShippingReports] = useState([]);
+  
     useEffect(() => {
-        const storedShipping = JSON.parse(localStorage.getItem("shippingDetails"));
-        setShippingInfo(storedShipping);
-    }, []);
-
+        const reports = JSON.parse(localStorage.getItem("shippingReports")) || [];
+        console.log("Loaded shipping reports:", reports); // Debug log to check if data is loading
+        setShippingReports(reports);
+      }, []);
+      
+  
     return (
-        <div className="min-h-screen p-6 bg-gray-100 dark:bg-gray-900 dark:text-white font-[Kanit]">
-            <h1 className="text-3xl font-bold text-center mb-6">📦 รายงานการจัดส่ง</h1>
-            <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
-                {shippingInfo ? (
-                    <>
-                        <div className="text-lg font-bold">ชื่อผู้รับ: {shippingInfo.customerName}</div>
-                        <div className="text-lg">📞 เบอร์โทรศัพท์: {shippingInfo.customerPhone}</div>
-                        <div className="text-lg">🏠 บ้านเลขที่: {shippingInfo.customerNumAddress}</div>
-                        <div className="text-lg">📍 ที่อยู่: {shippingInfo.customerAddress}</div>
-                        <div className="text-lg">🗺 จังหวัด: {shippingInfo.province}</div>
-                        <div className="text-lg">🏢 เขต/อำเภอ: {shippingInfo.district}</div>
-                        <div className="text-lg">🏡 แขวง/ตำบล: {shippingInfo.subdistrict}</div>
-                        <div className="text-lg">📮 รหัสไปรษณีย์: {shippingInfo.zipcode}</div>
-                        <div className="text-lg text-blue-500 mt-4">⏳ สถานะ: {shippingInfo.status}</div>
+      <div className="min-h-screen p-6 bg-gray-100 dark:bg-gray-900 dark:text-white font-[Kanit]">
+        <h1 className="text-3xl font-bold text-center mb-6">📦 รายงานคำสั่งซื้อ</h1> {/* เปลี่ยนจาก "รายงานการคำสั่งซื้อ" เป็น "รายงานคำสั่งซื้อ" */}
+        <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+        {shippingReports.length > 0 ? (
+  shippingReports.map((report, index) => (
+    <div key={index} className="mb-6">
+      <div className="text-lg font-bold">หมายเลขออเดอร์: {index + 1}</div> {/* Sequential order number */}
+      <div className="text-lg">ชื่อผู้รับ: {report.customerName}</div>
+      <div className="text-lg">ที่อยู่: {report.customerAddress}</div>
+      <div className="text-lg">หมายเลขติดตาม: {report.trackingNumber}</div>
+      <div className="text-lg">บริษัทขนส่ง: {report.shippingCarrier}</div>
+      <div className="text-lg">สถานะ: {report.status}</div>
+      <div className="text-lg">วันที่สั่งซื้อ: {report.shippingDate}</div> {/* Display the shipping date */}
+      <div className="text-lg">-------------------------------------------</div>
+    </div>
+  ))
+) : (
+  <p className="text-center">⏳ ไม่มีข้อมูลการคำสั่งซื้อ...</p> 
+)}
 
-                        {/* 🔥 เพิ่มหมายเลขติดตามพัสดุ */}
-                        <div className="text-lg font-bold mt-4">
-                            🚚 หมายเลขติดตามพัสดุ:{" "}
-                            {shippingInfo.trackingNumber ? (
-                                <span className="text-green-500">{shippingInfo.trackingNumber}</span>
-                            ) : (
-                                <span className="text-red-500">ยังไม่มีหมายเลขติดตาม</span>
-                            )}
-                        </div>
-                    </>
-                ) : (
-                    <p className="text-center">⏳ ไม่มีข้อมูลการจัดส่ง...</p>
-                )}
-            </div>
+
+
+
+
         </div>
+      </div>
     );
 };
 
