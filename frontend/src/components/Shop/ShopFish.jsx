@@ -13,14 +13,14 @@ import Heading from '../Shared/Heading';
 import ProductCard from '../Products/Productcard';
 
 const ProductsData2 = [
-  { id: 1, img: Image1, title: "ปลาซิวไบจิเต้", price: "฿60"},
-  { id: 2, img: Image2, title: "ปลาซิวกาแล็คซี่", price: "฿70"},
-  { id: 3, img: Image3, title: "ปลาซิวเพชรน้อย", price: "฿10"},
-  { id: 4, img: Image4, title: "ปลาคาดินัล ", price: "฿20"},
-  { id: 5, img: Image5, title: "ปลานีออน", price: "฿20"},
-  { id: 6, img: Image6, title: "ปลาซิวฟ้า", price: "฿50"},
-  { id: 7, img: Image7, title: "ปลาคาดินัลเผือก", price: "฿30"},
-  { id: 8, img: Image8, title: "ปลาเรนโบว์นีออนสั้น", price: "฿20"},
+  { id: 9, img: Image1, title: "ปลาซิวไบจิเต้", price: "฿60"},
+  { id: 10, img: Image2, title: "ปลาซิวกาแล็คซี่", price: "฿70"},
+  { id: 11, img: Image3, title: "ปลาซิวเพชรน้อย", price: "฿10"},
+  { id: 12, img: Image4, title: "ปลาคาดินัล ", price: "฿20"},
+  { id: 13, img: Image5, title: "ปลานีออน", price: "฿20"},
+  { id: 14, img: Image6, title: "ปลาซิวฟ้า", price: "฿50"},
+  { id: 15, img: Image7, title: "ปลาคาดินัลเผือก", price: "฿30"},
+  { id: 16, img: Image8, title: "ปลาเรนโบว์นีออนสั้น", price: "฿20"},
 ];
 
 const ShopFish = () => {
