@@ -1,4 +1,4 @@
-import React, { useState } from "react"; //หน้าการจัดส่ง 
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../CartContext/CartContext";
 import thaiDistricts from "../data/thaiDistricts";
@@ -28,12 +28,8 @@ const ShippingDetails = () => {
         const selectedDistrict = e.target.value;
         setDistrict(selectedDistrict);
         setSubdistrict("");
-    
-        // 🔥 ตรวจสอบว่ามีรหัสไปรษณีย์หรือไม่
-        const zipcodeData = thaiDistricts[province]?.zipcodes?.[selectedDistrict] || "";
-        setZipcode(zipcodeData);
+        setZipcode(thaiDistricts[province]?.zipcodes[selectedDistrict] || ""); // ✅ แก้ให้ดึงรหัสไปรษณีย์จาก "เขต"
     };
-    
 
     const handleSubdistrictChange = (e) => {
         setSubdistrict(e.target.value);
@@ -41,37 +37,57 @@ const ShippingDetails = () => {
 
     const handleConfirmShipping = () => {
         const requiredFields = [province, district, subdistrict, zipcode, customerName, customerPhone, customerNumAddress, customerAddress];
-    
+      
         if (requiredFields.some(field => !field)) {
-            alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
-            return;
+          alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
+          return;
         }
-    
-        // 🔥 บันทึกข้อมูลการจัดส่งลง LocalStorage
+      
+        // Grab the items from the cart
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || []; // Assuming items are stored in localStorage
+      
+        // Get today's date and format it as DD-MM-YYYY
+        const today = new Date();
+        const shippingDate = `${("0" + today.getDate()).slice(-2)}-${("0" + (today.getMonth() + 1)).slice(-2)}-${today.getFullYear()}`;
+      
+        // Create a new shipping record
         const shippingDetails = {
-            customerName,
-            customerPhone,
-            customerNumAddress,
-            customerAddress,
-            province,
-            district,
-            subdistrict,
-            zipcode,
-            status: "กำลังเตรียมสินค้า",
-            createdAt: new Date().toISOString(),
+          customerName,
+          customerPhone,
+          customerNumAddress,
+          customerAddress,
+          province,
+          district,
+          subdistrict,
+          zipcode,
+          status: "กำลังเตรียมสินค้า",
+          createdAt: new Date().toISOString(),
+          shippingDate, // Use the custom formatted shipping date
+          items: cartItems, // Store the cart items
         };
-    
-        localStorage.setItem("shippingDetails", JSON.stringify(shippingDetails));
-    
+      
+        // Get the existing shipping records from localStorage or initialize as an empty array
+        const existingShippingReports = JSON.parse(localStorage.getItem("shippingReports")) || [];
+      
+        // Add the new record to the existing ones
+        existingShippingReports.push(shippingDetails);
+      
+        // Save the updated list back to localStorage
+        localStorage.setItem("shippingReports", JSON.stringify(existingShippingReports));
+      
         setStatus("กำลังเตรียมสินค้า");
-    
+      
         setTimeout(() => {
-            alert("สินค้าของคุณกำลังเตรียมจัดส่ง!");
-            navigate("/shipping-report"); // 🔥 เปลี่ยนเส้นทางไปที่หน้ารายงานการจัดส่ง
-            clearCart();
+          alert("เราได้รับคำสั่งซื้อคุณแล้ว");
+          navigate("/shipping-report"); // Navigate to the shipping report page
+          clearCart(); // Clear the cart after confirming the order
         }, 2000);
-    };
-    
+      };
+      
+      
+      
+      
+
 
     return (
         <div className="min-h-screen p-6 bg-gray-100 dark:bg-gray-900 dark:text-white font-[Kanit]">
