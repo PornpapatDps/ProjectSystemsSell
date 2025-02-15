@@ -13,6 +13,7 @@ const Hero = () => {
       subtitle: "เลี้ยงไม้น้ำก็แล้ว...เหมือนขาดอะไรไป ???",
       title: "ลองเลี้ยง...ปะปะ...ปา",
       title2: "ปลาน้ำจืด",
+
     },
     {
       id: 2,
@@ -20,6 +21,7 @@ const Hero = () => {
       subtitle: "ไม้น้ำก็มี..ปลาก็มีแล้ว",
       title: "ลองไหม..ลองเลี้ยง..",
       title2: "กุ้งแคระ",
+      
     },
   ];
 
@@ -66,15 +68,15 @@ const Hero = () => {
                   </h1>
 
                   {/* Shop Now Button */}
-                  <div className="mt-5">
-                    <Link to="/shop">
+                  {/* <div className="mt-5">
+                    <Link to="/shrimp-shop">
                       <Button 
                         text="Shop Now"
                         bgColor="bg-primary"
                         textColor="text-white"
                       />
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Image section */}
