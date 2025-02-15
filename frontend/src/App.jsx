@@ -29,6 +29,17 @@ import AuthPages from './components/Auth/AuthPages';
 import ShippingReport from './components/ShippingReport/ShippingReport';
 import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation';
 
+import Shrimp from './components/About/Shrimp';
+import KnowFish from './components/About/KnowFish/KnowFish';
+import KnowFish2 from './components/About/KnowFish/KnowFish2';
+import KnowFish3 from './components/About/KnowFish/KnowFish3';
+import KnowFish4 from './components/About/KnowFish/KnowFish4';
+import KnowFish5 from './components/About/KnowFish/KnowFish5';
+import KnowFish6 from './components/About/KnowFish/KnowFish6';
+import KnowFish7 from './components/About/KnowFish/KnowFish7';
+import KnowFish8 from './components/About/KnowFish/KnowFish8';
+
+
 
 
 const BannerData = {
@@ -80,6 +91,17 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/shrimp" element={<AboutShrimp />} />
             <Route path="/fish" element={<AboutFish />} />
+            <Route path="/KnowFish1" element={<KnowFish />} />
+            <Route path="/KnowFish2" element={<KnowFish2 />} />
+            <Route path="/KnowFish3" element={<KnowFish3 />} />
+            <Route path="/KnowFish4" element={<KnowFish4 />} />
+            <Route path="/KnowFish5" element={<KnowFish5 />} />
+            <Route path="/KnowFish6" element={<KnowFish6 />} />
+            <Route path="/KnowFish7" element={<KnowFish7 />} />
+            <Route path="/KnowFish8" element={<KnowFish8 />} />
+
+            
+            <Route path="/shrimpKnowle" element={<Shrimp />} />
 
             <Route path="/shop" element={<Shop />} />
             <Route path="/shrimp-shop" element={<ShopShrimp />} />
