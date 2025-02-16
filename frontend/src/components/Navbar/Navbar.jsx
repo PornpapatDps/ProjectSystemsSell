@@ -99,7 +99,7 @@ const Navbar = () => {
                   </div>
                 </li>
                 <Link to="/shipping-report" className="text-gray-500 hover:text-black  dark:hover:text-white font-semibold">
-  รายงานการจัดส่งสินค้า
+                รายงานสถานะการจัดส่ง
 </Link>
 
 
