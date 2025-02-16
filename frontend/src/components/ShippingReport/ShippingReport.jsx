@@ -67,7 +67,7 @@ const ShippingReport = () => {
                                 {/* <th className="border border-gray-300 dark:border-gray-600 p-2">บริษัทขนส่ง</th> */}
                                 <th className="border border-gray-300 dark:border-gray-600 p-2">สถานะ</th>
                                 <th className="border border-gray-300 dark:border-gray-600 p-2">วันที่สั่งซื้อ</th>
-                                <th className="border border-gray-300 dark:border-gray-600 p-2">การกระทำ</th>
+                                <th className="border border-gray-300 dark:border-gray-600 p-2">จัดการข้อมูล</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -86,12 +86,7 @@ const ShippingReport = () => {
                                     <td className="border border-gray-300 dark:border-gray-600 p-2">{report.shippingDate}</td>
                                     
                                     <td className="border border-gray-300 dark:border-gray-600 p-2">
-                                        <button
-                                            onClick={() => handleEdit(index)}
-                                            className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2"
-                                        >
-                                            แก้ไข
-                                        </button>
+                                        
                                         <button
                                             onClick={() => handleDelete(index)}
                                             className="bg-red-500 text-white px-4 py-2 rounded-md"
@@ -175,21 +170,7 @@ const ShippingReport = () => {
                             />
                         </div>
                         
-                        {/* Add more fields for editing as necessary */}
-                        <div className="flex justify-end space-x-4">
-                            <button
-                                onClick={() => setEditIndex(null)}
-                                className="bg-gray-300 text-black px-4 py-2 rounded-md"
-                            >
-                                ยกเลิก
-                            </button>
-                            <button
-                                onClick={handleSaveEdit}
-                                className="bg-green-500 text-white px-4 py-2 rounded-md"
-                            >
-                                บันทึกการแก้ไข
-                            </button>
-                        </div>
+                        
                     </div>
                 </div>
             )}
