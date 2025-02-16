@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useCart } from "../CartContext/CartContext";
 import { useNavigate } from "react-router-dom";
+import qrCode from "../../assets/SA/qr_test.jpg";
 
 const Checkout = () => {
     const { cartItems, clearCart } = useCart();
@@ -64,19 +65,19 @@ const Checkout = () => {
             {paymentMethod === "bank" ? (
                 <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow mt-6">
                     <h2 className="text-2xl font-semibold">🏦 ข้อมูลบัญชีธนาคาร</h2>
-                    <p className="text-lg mt-2">ชื่อบัญชี: ร้านขายสัตว์น้ำออนไลน์</p>
+                    <p className="text-lg mt-2">ชื่อบัญชี: 88aqua_thailand</p>
                     <p className="text-lg">เลขบัญชี: 123-456-789</p>
                     <p className="text-lg">ธนาคาร: กรุงไทย</p>
                 </div>
             ) : (
                 <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow mt-6">
                     <h2 className="text-2xl font-semibold">📌 สแกนเพื่อชำระเงิน</h2>
-                    <img src="/path-to-qr-code.png" alt="QR Code" className="w-60 mx-auto" />
+                    <img src={qrCode} alt="QR Code" className="w-60 mx-auto " />
                 </div>
             )}
 
             {/* อัปโหลดสลิปโอนเงิน */}
-            <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow mt-6">
+            <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow mt-6 ">
                 <h2 className="text-2xl font-semibold">📎 อัปโหลดสลิปการโอนเงิน</h2>
                 <input type="file" accept="image/*" onChange={handleFileChange} className="mt-4" />
             </div>
