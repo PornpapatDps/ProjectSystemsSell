@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useCart } from "../CartContext/CartContext";
 import { useNavigate } from "react-router-dom";
-import qrCode from "../../assets/SA/qr_test.jpg";
+import qrCode from "../../assets/SA/example_qr.png";
 
 const Checkout = () => {
     const { cartItems, clearCart } = useCart();
@@ -72,7 +72,7 @@ const Checkout = () => {
             ) : (
                 <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow mt-6">
                     <h2 className="text-2xl font-semibold">📌 สแกนเพื่อชำระเงิน</h2>
-                    <img src={qrCode} alt="QR Code" className="w-60 mx-auto " />
+                    <img src={qrCode} alt="QR Code" className="w-60 mx-auto  " />
                 </div>
             )}
 
