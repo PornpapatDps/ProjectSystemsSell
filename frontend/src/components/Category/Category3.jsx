@@ -21,9 +21,9 @@ const Category = () => {
                 <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Sushi Orange </p>
                 <Link to="/KnowShrimp3">
                 <Button
-                  text="Browser"
+                  text="ศึกษาความรู้"
                   bgColor={"bg-white"}
-                  textColor={"text-primary"}
+                  textColor={"text-black"}
                 /> </Link>
               </div>
             </div>
@@ -40,9 +40,9 @@ const Category = () => {
                 <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Yamato</p>
                 <Link to="/KnowShrimp8">
                 <Button
-                  text="Browser"
+                  text="ศึกษาความรู้"
                   bgColor={"bg-white"}
-                  textColor={"text-primary"}
+                  textColor={"text-black"}
                 /> </Link>
               </div>
             </div>
@@ -58,9 +58,9 @@ const Category = () => {
                 <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Blue dream</p>
                 <Link to="/KnowShrimp6">
                 <Button
-                  text="Browser"
-                  bgColor={"bg-primary"}
-                  textColor={"text-white"}
+                  text="ศึกษาความรู้"
+                  bgColor={"bg-white"}
+                  textColor={"text-black"}
                 /> </Link>
               </div>
             </div>
@@ -76,9 +76,9 @@ const Category = () => {
                 <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Red B</p>
                 <Link to="/KnowShrimp1">
                 <Button
-                  text="Browser"
+                  text="ศึกษาความรู้"
                   bgColor={"bg-white"}
-                  textColor={"text-primary"}
+                  textColor={"text-black"}
                 /> </Link>
               </div>
             </div>
