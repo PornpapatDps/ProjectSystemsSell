@@ -22,9 +22,9 @@ const Category = () => {
                 <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Bajite Rasbora</p>
                 <Link to="/KnowFish1"> 
                 <Button
-                  text="Browser"
+                  text="ศึกษาความรู้"
                   bgColor={"bg-white"}
-                  textColor={"text-primary"}
+                  textColor={"text-black"}
                 /> </Link>
               </div>
             </div>
@@ -40,9 +40,9 @@ const Category = () => {
                 <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Diamond Rasbora</p>
                 <Link to="/KnowFish2">
                 <Button
-                  text="Browser"
+                  text="ศึกษาความรู้"
                   bgColor={"bg-white"}
-                  textColor={"text-brandBlues"}
+                  textColor={"text-black"}
                 /> </Link>
               </div>
             </div>
@@ -58,9 +58,9 @@ const Category = () => {
                 <p className='text-4xl xl:text-5xl font-bold opacity-20'>Cardinal Tetra</p>
                 <Link to="/KnowFish4">
                 <Button
-                  text="Browser"
+                  text="ศึกษาความรู้"
                   bgColor={"bg-white"}
-                  textColor={"text-primary"}
+                  textColor={"text-black"}
                 /> </Link>
               </div>
             </div>
@@ -76,9 +76,9 @@ const Category = () => {
                 <p className='text-4xl xl:text-5xl font-bold opacity-20'>Galaxy Rasbora</p>
                 <Link to="/KnowFish3">
                 <Button
-                  text="Browser"
-                  bgColor={"bg-primary"}
-                  textColor={"text-white"}
+                  text="ศึกษาความรู้"
+                  bgColor={"bg-white"}
+                  textColor={"text-black"}
                 /> </Link>
               </div>
             </div>
