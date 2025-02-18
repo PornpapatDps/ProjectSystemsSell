@@ -10,26 +10,26 @@ const ServicesData = [
   {
     id: 1,
     icon: <FaCarSide className="text-4xl md:text-5xl text-primary" />,
-    title: "Free Shipping",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "ขนส่ง",
+    description: "ทันใจภายใน1วัน ส่งถึงมือคุณ",
   },
   {
     id: 2,
     icon: <FaHeadphonesAlt className="text-4xl md:text-5xl text-primary" />,
-    title: "24/7 Support",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "บริการให้คำปรึกษา",
+    description: "ให้ปรึกษาเรื่องการเลี้ยงปลาและกุ้ง",
   },
   {
     id: 3,
     icon: <FaWallet className="text-4xl md:text-5xl text-primary" />,
-    title: "Secure Payment",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "ราคาประหยัด",
+    description: "ราคาเข้าถึงทุกคน",
   },
   {
     id: 4,
     icon: <FaCheckCircle className="text-4xl md:text-5xl text-primary" />,
-    title: "Money Back Guarantee",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "คุณภาพ",
+    description: "ปลาและกุ้งที่มีคุณภาพ กักโรคทุกชนิด",
   },
 ];
 
