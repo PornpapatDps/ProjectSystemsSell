@@ -1,6 +1,8 @@
-import React from 'react';
-import Button from '../Shared/Button';
+/* eslint-disable react/prop-types */
+
 import { useCart } from '../CartContext/CartContext';
+
+// eslint-disable-next-line react/prop-types
 
 const ProductCard = ({ data }) => {
   const { addToCart } = useCart(); // ใช้งานฟังก์ชันเพิ่มสินค้าไปยังตะกร้า
