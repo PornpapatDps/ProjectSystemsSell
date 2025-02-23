@@ -1,6 +1,6 @@
 import img1 from '../../../assets/SA/10.png';
 
-import React from 'react'
+
 
 const KnowFish2 = () => {
   return (
