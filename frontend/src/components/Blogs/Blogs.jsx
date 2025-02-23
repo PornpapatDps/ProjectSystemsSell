@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Heading from '../Shared/Heading'
 import Img1 from '../../assets/SA/1.png'
 import Img2 from '../../assets/SA/16.png'
