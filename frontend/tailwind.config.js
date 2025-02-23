@@ -24,6 +24,14 @@ export default {
         sm: "2rem",
       },
     },
+    screens: {
+      xs: "375px", // สำหรับ iPhone SE / Android ขนาดเล็ก
+      sm: "640px", // ค่าเริ่มต้นของ Tailwind
+      md: "768px", // สำหรับ Tablet
+      lg: "1024px", // สำหรับ Laptop
+      xl: "1280px", // สำหรับหน้าจอใหญ่
+      "2xl": "1536px", // สำหรับจอขนาดใหญ่พิเศษ
+    },
   },
   plugins: [],
 };
