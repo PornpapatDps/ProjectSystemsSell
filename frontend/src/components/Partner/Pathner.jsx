@@ -1,4 +1,4 @@
-import React from 'react'
+
 import brand1 from '../../assets/SA/f1.png'
 import brand2 from '../../assets/SA/f2.png'
 import brand3 from '../../assets/SA/f3.png'
