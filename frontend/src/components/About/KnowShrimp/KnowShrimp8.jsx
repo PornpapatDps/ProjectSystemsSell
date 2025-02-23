@@ -1,6 +1,6 @@
 import img1 from '../../../assets/SA/8.png';
 
-import React from 'react'
+
 
 const KnowShrimp8 = () => {
   return (
