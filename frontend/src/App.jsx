@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Navbar/Hero/Hero';
@@ -27,7 +27,7 @@ import CartPage from './components/CartContext/CartPage';
 import ShippingDetails from './components/ShippingDetails/ShippingDetails';
 import AuthPages from './components/Auth/AuthPages';
 import ShippingReport from './components/ShippingReport/ShippingReport';
-import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation';
+// import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation';
 
 
 import KnowFish from './components/About/KnowFish/KnowFish';
@@ -133,7 +133,7 @@ const App = () => {
             <Route path="/signup" element={<AuthPages isSignUp={true} />} />
             <Route path="/shipping-report" element={<ShippingReport />} />
 
-            <Route path="/order-confirmation" element={<OrderConfirmation />} />
+            {/* <Route path="/order-confirmation" element={<OrderConfirmation />} /> */}
             
           </Routes>
           <Partner />
@@ -143,5 +143,4 @@ const App = () => {
     </CartProvider>  
   );
 };
-
 export default App;
