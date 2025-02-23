@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useCart } from "../CartContext/CartContext";
 import { useNavigate } from "react-router-dom";
 import qrCode from "../../assets/SA/example_qr.png";
