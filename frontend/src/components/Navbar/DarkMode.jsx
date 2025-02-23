@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import LightButton from "../../assets/website/light-mode-button.png";
 import DarkButton from "../../assets/website/dark-mode-button.png";
 
@@ -22,7 +22,7 @@ const DarkMode = () => {
       element.classList.remove("dark");
       document.body.classList.remove("dark"); // ✅ ลบคลาสออกจาก body
     }
-  }, [theme]); 
+  }, [element.classList, theme]); 
    // Run only when `theme` changes
 
   return (
