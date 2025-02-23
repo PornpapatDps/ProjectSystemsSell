@@ -1,7 +1,5 @@
 import img1 from '../../../assets/SA/4.png';
 
-import React from 'react'
-
 const KnowShrimp4 = () => {
   return (
     <div>
