@@ -1,9 +1,8 @@
-import React from "react";
+
 import Slider from "react-slick";
 import Image1 from "../../../assets/SA/fish1.png";
 import Image2 from "../../../assets/SA/shrimp1.png";
-import Button from "../../Shared/Button";
-import { Link } from "react-router-dom";
+
 
 const Hero = () => {
   const heroData = [
