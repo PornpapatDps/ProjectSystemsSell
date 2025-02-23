@@ -1,5 +1,7 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
+
+// eslint-disable-next-line react/prop-types
 const Banner = ({data}) => {
   return (
     <div className='min-h-[550px] flex items-center justify-center
@@ -7,6 +9,7 @@ const Banner = ({data}) => {
       <div
       className='container'>
         <div
+        // eslint-disable-next-line react/prop-types
         style={{ backgroundColor: data.bgColor }}
         className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6
         items-center text-white rounded-3xl">
