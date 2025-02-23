@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 const AuthPage = ({ isSignUp }) => {
     const [userDetails, setUserDetails] = useState({ username: "", password: "", confirmPassword: "" });
     const navigate = useNavigate();
