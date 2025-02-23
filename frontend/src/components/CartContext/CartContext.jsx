@@ -1,31 +1,50 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 // สร้าง Context
 const CartContext = createContext();
 
 // Hook ใช้เพื่อดึงข้อมูล Cart
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => {
     return useContext(CartContext);
 };
 
-// สร้าง Provider สำหรับ Cart
-export const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState(() => {
-        // โหลดข้อมูลตะกร้าจาก localStorage ถ้ามี
+// โหลดตะกร้าจาก localStorage อย่างปลอดภัย
+const getSavedCart = () => {
+    try {
         const savedCart = localStorage.getItem("cart");
         return savedCart ? JSON.parse(savedCart) : [];
-    });
+    } catch (error) {
+        console.error("Error loading cart from localStorage:", error);
+        return [];
+    }
+};
 
+// สร้าง Provider สำหรับ Cart
+// eslint-disable-next-line react/prop-types
+export const CartProvider = ({ children }) => {
+    const [cartItems, setCartItems] = useState(getSavedCart);
     const shippingCost = 150; // ค่าจัดส่งคงที่
 
     // อัปเดต localStorage เมื่อ cartItems เปลี่ยน
     useEffect(() => {
-        localStorage.setItem("cart", JSON.stringify(cartItems));
+        try {
+            if (cartItems.length > 0) {
+                localStorage.setItem("cart", JSON.stringify(cartItems));
+            } else {
+                localStorage.removeItem("cart");
+            }
+        } catch (error) {
+            console.error("Error saving cart to localStorage:", error);
+        }
     }, [cartItems]);
 
     // ฟังก์ชันช่วยแปลงราคาเป็นตัวเลข
     const parsePrice = (price) => {
-        return parseFloat(price.toString().replace("฿", "")) || 0;
+        if (typeof price === "string") {
+            return parseFloat(price.replace(/[^\d.]/g, "")) || 0;
+        }
+        return parseFloat(price) || 0;
     };
 
     // เพิ่มสินค้าเข้า Cart
@@ -47,13 +66,11 @@ export const CartProvider = ({ children }) => {
         setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
     };
 
-    // อัปเดตจำนวนสินค้า
+    // อัปเดตจำนวนสินค้า (ป้องกันค่าติดลบ)
     const updateQuantity = (id, quantity) => {
         setCartItems((prevItems) =>
             prevItems.map((item) =>
-                item.id === id
-                    ? { ...item, quantity: quantity > 0 ? quantity : 1 }
-                    : item
+                item.id === id ? { ...item, quantity: Math.max(quantity, 1) } : item
             )
         );
     };
@@ -75,7 +92,11 @@ export const CartProvider = ({ children }) => {
     // ล้างตะกร้าทั้งหมด
     const clearCart = () => {
         setCartItems([]);
-        localStorage.removeItem("cart"); // ลบจาก localStorage ด้วย
+        try {
+            localStorage.removeItem("cart");
+        } catch (error) {
+            console.error("Error clearing cart from localStorage:", error);
+        }
     };
 
     return (
