@@ -1,10 +1,10 @@
-import React from 'react'
+
 import Image1 from "../../assets/SA/f1.png";
 import Image2 from "../../assets/SA/f3.png";
 import Image3 from "../../assets/SA/f2.png";
 import Image4 from "../../assets/SA/f4.png";
 import Button from "../Shared/Button";
-import { Link, Links } from 'react-router-dom';
+import { Link,  } from 'react-router-dom';
 
 const Category = () => {
   return (
