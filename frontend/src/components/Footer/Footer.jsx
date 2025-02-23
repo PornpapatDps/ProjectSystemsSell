@@ -1,6 +1,6 @@
-import React from 'react'
+
 import { FaMobileAlt } from 'react-icons/fa';
-import { FaFacebook, FaInstagram, FaLocationArrow, FaMobile } from 'react-icons/fa6';
+import { FaFacebook, FaInstagram, FaLocationArrow  } from 'react-icons/fa6';
 
 
 const FooterLinks = [
