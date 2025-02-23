@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../CartContext/CartContext";
 import thaiDistricts from "../data/thaiDistricts";
 
 const ShippingDetails = () => {
-    const { cartItems, clearCart } = useCart();
+    const {  clearCart } = useCart();
     const [customerName, setCustomerName] = useState("");
     const [customerPhone, setCustomerPhone] = useState("");
     const [customerNumAddress, setCustomerNumAddress] = useState("");
