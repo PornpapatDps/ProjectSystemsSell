@@ -48,9 +48,7 @@ import KnowShrimp6 from './components/About/KnowShrimp/KnowShrimp6';
 import KnowShrimp7 from './components/About/KnowShrimp/KnowShrimp7';
 import KnowShrimp8 from './components/About/KnowShrimp/KnowShrimp8';
 
-
-
-
+import { Analytics } from "@vercel/analytics/react"
 
 const BannerData = {
   
@@ -81,7 +79,9 @@ const App = () => {
       <Router>
         <div className="bg-white dark:bg-gray-900 dark:text-white duration-300 overflow-hidden">
           <Navbar />
+          <Analytics />
           <Routes>
+            
             <Route path="/" element={
               <>
                 <Hero />
