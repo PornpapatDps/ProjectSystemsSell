@@ -14,7 +14,7 @@ import Partner from './components/Partner/Pathner';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About'; // นำเข้าหน้า About
 import AboutShrimp from './components/About/AboutShrimp'; // นำเข้าหน้า Shrimp
-import AboutFish from './components/About/AboutFish'; // นำเข้าหน้า Fish
+import AboutFish from './components/About/AboutFish'; // นำเข้าหน้า Fishก
 import Shop from './components/Shop/Shop'; // นำเข้าหน้า Shop
 import ShopShrimp from './components/Shop/ShoptShrimp'; // นำเข้าหน้า Shrimp
 import ShopFish from './components/Shop/ShopFish'; // นำเข้าหน้า Fish

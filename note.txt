@@ -1,0 +1,9 @@
+🔹 1. Netlify (ง่ายสำหรับ Static Site)
+        > ติดตั้ง Netlify CLI
+            npm install -g netlify-cli
+        > Login เข้า Netlify
+            netlify login
+        > Build Project
+            npm run build
+        > Deploy ไป Netlify
+            netlify deploy --prod
