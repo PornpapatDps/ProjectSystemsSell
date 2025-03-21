@@ -1,16 +1,31 @@
+/* 📌 กำหนด Layout ให้เป็น Responsive */
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* 🎨 ปรับขนาด Logo ให้อยู่กึ่งกลางและ Responsive */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
+/* 🖼️ ปรับขนาด Logo บนอุปกรณ์เล็ก */
+@media screen and (max-width: 768px) {
+  .logo {
+    height: 4em; /* ลดขนาดโลโก้บนมือถือ */
+    padding: 1em;
+  }
+}
+
+/* 🟢 เอฟเฟกต์ Hover ของ Logo */
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -18,6 +33,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* 🔄 เพิ่ม Animation ให้ Logo หมุน */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,16 +43,36 @@
   }
 }
 
+/* 🌍 ปรับให้โลโก้หมุนเฉพาะบน Desktop */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* 📦 ปรับการ์ดให้ Responsive */
 .card {
   padding: 2em;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
 }
 
+/* 📖 ปรับสีของข้อความเอกสาร */
 .read-the-docs {
   color: #888;
+}
+
+/* 📱 Media Query สำหรับ Mobile */
+@media screen and (max-width: 600px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5em;
+    max-width: 90%;
+  }
 }

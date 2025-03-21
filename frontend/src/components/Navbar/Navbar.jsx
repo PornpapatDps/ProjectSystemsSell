@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"; 
-import { FaCartShopping } from "react-icons/fa6";
-import { FaCaretDown } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import { FaCartShopping, FaCaretDown } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
-import { useCart } from "../CartContext/CartContext"; 
+import { useCart } from "../CartContext/CartContext";
 import { BsPersonCircle } from "react-icons/bs";
 import Button from "../Shared/Button";
 
@@ -29,12 +28,10 @@ const Navbar = () => {
         <div className="container flex justify-between items-center">
           {/* Logo and Links section */}
           <div className="flex items-center gap-6">
-            <Link
-              to="/"
-              className="text-primary font-semibold tracking-widest text-2xl uppercase sm:text-3xl"
-            >
+            <Link to="/" className="text-primary font-semibold tracking-widest text-2xl uppercase sm:text-3xl">
               Aq88
             </Link>
+
             {/* Desktop Menu items */}
             <div className="hidden lg:block">
               <ul className="flex items-center gap-6">
@@ -48,15 +45,11 @@ const Navbar = () => {
                     </Link>
                   </li>
                 ))}
-                
+
                 {/* Dropdowns */}
                 <li className="relative group">
-                  <Link
-                    to="/about"
-                    className="flex items-center gap-1 font-semibold text-gray-500 hover:text-black dark:hover:text-white py-2"
-                  >
-                    About
-                    <FaCaretDown className="group-hover:rotate-180 duration-300" />
+                  <Link to="/about" className="flex items-center gap-1 font-semibold text-gray-500 hover:text-black dark:hover:text-white py-2">
+                    About <FaCaretDown className="group-hover:rotate-180 duration-300" />
                   </Link>
                   <div className="absolute hidden group-hover:block w-48 rounded-md bg-white shadow-md dark:bg-gray-900 dark:text-white p-2 transition-all duration-300">
                     <ul className="space-y-2">
@@ -73,13 +66,10 @@ const Navbar = () => {
                     </ul>
                   </div>
                 </li>
+
                 <li className="relative group">
-                  <Link
-                    to="/shop"
-                    className="flex items-center gap-1 font-semibold text-gray-500 hover:text-black dark:hover:text-white py-2"
-                  >
-                    Shop
-                    <FaCaretDown className="group-hover:rotate-180 duration-300" />
+                  <Link to="/shop" className="flex items-center gap-1 font-semibold text-gray-500 hover:text-black dark:hover:text-white py-2">
+                    Shop <FaCaretDown className="group-hover:rotate-180 duration-300" />
                   </Link>
                   <div className="absolute hidden group-hover:block w-48 rounded-md bg-white shadow-md dark:bg-gray-900 dark:text-white p-2 transition-all duration-300">
                     <ul className="space-y-2">
@@ -96,6 +86,7 @@ const Navbar = () => {
                     </ul>
                   </div>
                 </li>
+
                 <Link to="/shipping-report" className="text-gray-500 hover:text-black dark:hover:text-white font-semibold">
                   รายงานสถานะการจัดส่ง
                 </Link>
@@ -105,7 +96,7 @@ const Navbar = () => {
             {/* Hamburger Menu for Mobile */}
             <div className="lg:hidden flex items-center">
               <button onClick={toggleMenu} className="text-gray-500 dark:text-gray-400">
-                <FaCaretDown />
+                <FaCaretDown className="sm:group-hover:rotate-180 sm:duration-300" />
               </button>
             </div>
           </div>
@@ -123,47 +114,49 @@ const Navbar = () => {
             </Link>
 
             {/* Dark-mode section */}
-            <div>
+            <div className="sm:flex items-center gap-4">
               <DarkMode />
             </div>
-            <div className="flex flex-initial items-center gap-2 justify-start mt-1">
-            {/* Login Button */}
-            <div className="w-full sm:w-auto">
-              <Link to="/signin">
-                <Button
-                  icon={<BsPersonCircle className="text-2xl" />}
-                  text="Login"
-                  bgColor="bg-primary"
-                  textColor="text-white"
-                  className="w-full sm:w-auto"  // ใช้เต็มความกว้างในมือถือและขนาดปกติในขนาดใหญ่
-                />
-              </Link>
-            </div>
 
-            {/* Signup Button */}
-            <div className="w-full sm:w-auto">
+            {/* Login & Signup (ซ่อนไว้ในมือถือ) */}
+            <div className="hidden lg:flex items-center gap-2">
+              <Link to="/signin">
+                <Button icon={<BsPersonCircle className="text-2xl" />} text="Login" bgColor="bg-primary" textColor="text-white" />
+              </Link>
               <Link to="/signup">
-                <Button
-                  icon={<BsPersonCircle className="text-2xl" />}
-                  text="Signup"
-                  bgColor="bg-gray-400"
-                  textColor="text-white"
-                  className="w-full sm:w-auto"  // ใช้เต็มความกว้างในมือถือและขนาดปกติในขนาดใหญ่
-                />
+                <Button icon={<BsPersonCircle className="text-2xl" />} text="Signup" bgColor="bg-gray-400" textColor="text-white" />
               </Link>
             </div>
           </div>
-
-        </div>
         </div>
 
         {/* Mobile Menu - Toggled visibility with smooth transition */}
-        <div className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out mt-4`}>
+        <div className={`lg:hidden ${isMenuOpen ? "block" : "hidden"} transition-all duration-300 ease-in-out mt-4`}>
           <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-4">
-            <Link to="/" className="block py-2 text-gray-500 hover:text-black dark:hover:text-white font-semibold mb-2">Home</Link>
-            <Link to="/about" className="block py-2 text-gray-500 hover:text-black dark:hover:text-white font-semibold mb-2">About</Link>
-            <Link to="/shop" className="block py-2 text-gray-500 hover:text-black dark:hover:text-white font-semibold mb-2">Shop</Link>
-            <Link to="/shipping-report" className="block py-2 text-gray-500 hover:text-black dark:hover:text-white font-semibold">รายงานสถานะการจัดส่ง</Link>
+            <Link to="/" className="block py-2 text-gray-500 hover:text-black dark:hover:text-white font-semibold mb-2">
+              Home
+            </Link>
+            <Link to="/about" className="block py-2 text-gray-500 hover:text-black dark:hover:text-white font-semibold mb-2">
+              About
+            </Link>
+            <Link to="/shop" className="block py-2 text-gray-500 hover:text-black dark:hover:text-white font-semibold mb-2">
+              Shop
+            </Link>
+            <Link to="/shipping-report" className="block py-2 text-gray-500 hover:text-black dark:hover:text-white font-semibold">
+              รายงานสถานะการจัดส่ง
+            </Link>
+
+            
+
+            {/* Login & Signup in Mobile */}
+            <div className="mt-4 flex flex-col gap-2">
+              <Link to="/signin">
+                <Button text="Login" bgColor="bg-primary" textColor="text-white" />
+              </Link>
+              <Link to="/signup">
+                <Button text="Signup" bgColor="bg-gray-400" textColor="text-white" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

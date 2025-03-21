@@ -1,8 +1,6 @@
-
 import Slider from "react-slick";
-import Image1 from "../../../assets/SA/fish1.png";
-import Image2 from "../../../assets/SA/shrimp1.png";
-
+import Image1 from "../../../assets/SA/f4.png";
+import Image2 from "../../../assets/SA/RedB.png";
 
 const Hero = () => {
   const heroData = [
@@ -12,7 +10,6 @@ const Hero = () => {
       subtitle: "เลี้ยงไม้น้ำก็แล้ว...เหมือนขาดอะไรไป ???",
       title: "ลองเลี้ยง...ปะปะ...ปา",
       title2: "ปลาน้ำจืด",
-
     },
     {
       id: 2,
@@ -20,7 +17,6 @@ const Hero = () => {
       subtitle: "ไม้น้ำก็มี..ปลาก็มีแล้ว",
       title: "ลองไหม..ลองเลี้ยง..",
       title2: "กุ้งแคระ",
-      
     },
   ];
 
@@ -38,55 +34,48 @@ const Hero = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mx-auto px-4">
       <div
-        className="overflow-hidden rounded-3xl min-h-[550px] sm:min-h-[650px] 
+        className="overflow-hidden rounded-3xl min-h-[500px] sm:min-h-[600px] 
         hero-bg-color flex justify-center items-center"
       >
-        <div className="container pb-8 sm:pb-0">
+        <div className="w-full">
           <Slider {...settings}>
             {heroData.map((data) => (
-              <div key={data.id} className="grid grid-cols-1 sm:grid-cols-2">
-                {/* Text content section */}
+              <div
+                key={data.id}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center px-6"
+              >
+                {/* 📌 Text Section */}
                 <div
-                  className="flex flex-col justify-center gap-4 sm:pl-3 pt-12 sm:pt-0 
-                  text-center sm:text-right order-2 sm:order-1 relative 
-                  translate-y-[200px] font-[Kanit]"
+                  className="flex flex-col gap-4 text-center lg:text-left 
+                  order-2 lg:order-1 font-[Kanit] lg:translate-y-[170px] sm:translate-y-[100px] 
+                  lg:translate-x-[70px] 
+                  "
                 >
-                  <h1 className="text-2xl sm:text-6xl lg:text-3xl font-bold">
+                  <h1 className="text-lg sm:text-2xl lg:text-3xl font-bold">
                     {data.subtitle}
                   </h1>
-                  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold">
+                  <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold">
                     {data.title}
                   </h1>
                   <h1
-                    className="text-5xl uppercase text-brandBlues dark:text-gray-300 
-                    sm:text-[80px] md:text-[100px] xl:text-[150px] font-bold "
+                    className="text-4xl sm:text-6xl lg:text-7xl uppercase 
+                    text-brandBlues dark:text-gray-300 font-bold"
                   >
                     {data.title2}
                   </h1>
-
-                  {/* Shop Now Button */}
-                  {/* <div className="mt-5">
-                    <Link to="/shrimp-shop">
-                      <Button 
-                        text="Shop Now"
-                        bgColor="bg-primary"
-                        textColor="text-white"
-                      />
-                    </Link>
-                  </div> */}
                 </div>
 
-                {/* Image section */}
-                <div className="order-1 sm:order-2 flex justify-center items-center">
-                  <div className="relative z-10">
+                {/* 🖼️ Image Section */}
+                <div className="flex justify-center order-1 lg:order-4 sm:order-2">
+                  <div className="relative">
                     <img
                       src={data.img}
                       alt="hero-img"
-                      className="w-[600px] h-[600px] sm:h-[500px] sm:scale-110 lg:scale-125 
-                      object-contain mx-auto drop-shadow-[8px_-4px_6px_rgba(0,0,0,0.4)] 
-                      relative translate-y-[-120px] translate-x-[-350px]"
+                      className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[700px] 
+                      lg:translate-x-[100px] lg:translate-y-[-70px] 
+                      object-contain mx-auto drop-shadow-xl"
                     />
                   </div>
                 </div>

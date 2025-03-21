@@ -2,29 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html, body {
   @apply w-full h-full min-h-screen transition-colors duration-300;
 }
 
+/* 🌙 รองรับ Dark Mode */
 html.dark, body.dark {
   @apply bg-gray-900 text-white;
 }
 
 @layer components {
-  .search-bar{
-    @apply w-0 group-hover:w-[300px] transition-all duration-300 
-           rounded-full border border-transparent 
-           group-hover:border-gray-500 px-3 py-1 
-           focus:outline-none focus:border-gray-400 
-           dark:border-gray-800 dark:bg-gray-900 
-           dark:group-hover:bg-gray-800;
+  /* 🔍 Search Bar ที่ Responsive */
+  .search-bar {
+    @apply w-0 group-hover:w-[200px] sm:group-hover:w-[250px] md:group-hover:w-[300px] lg:group-hover:w-[350px] 
+           transition-all duration-300 rounded-full 
+           border border-transparent group-hover:border-gray-500 
+           px-3 py-1 focus:outline-none focus:border-gray-400 
+           dark:border-gray-800 dark:bg-gray-900 dark:group-hover:bg-gray-800;
   }
 }
 
 @layer utilities {
+  /* 🎨 Background ของ Hero Section ที่รองรับทุกหน้าจอ */
   .hero-bg-color {
     @apply bg-gradient-to-r from-gray-300/80 to-gray-100
-    dark:from-gray-900 dark:to-gray-800 dark:text-white;
+           dark:from-gray-900 dark:to-gray-800 dark:text-white;
+  }
+
+  /* 🖼️ ปรับขนาด Container ให้เหมาะกับทุกหน้าจอ */
+  .container-responsive {
+    @apply w-full max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl mx-auto px-4;
+  }
+
+  /* 🏆 การ์ดที่ปรับขนาดอัตโนมัติ */
+  .card-responsive {
+    @apply p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg;
+  }
+
+  /* 🖼️ ปรับขนาดของภาพให้ Responsive */
+  .image-responsive {
+    @apply w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 object-cover;
+  }
+
+  /* 📜 ปรับขนาดตัวอักษรให้รองรับทุกหน้าจอ */
+  .text-responsive {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl;
   }
 }

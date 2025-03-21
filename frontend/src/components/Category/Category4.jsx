@@ -10,9 +10,9 @@ const Category = () => {
     <div className='py-3'>
       <div className='container'>
         <div className='grid grid-cols-1 sm:grid-cols-2
-        lg:grid-cols-5 gap-4 font-[Kanit]'>
+        lg:grid-cols-9 gap-4 font-[Kanit]'>
           {/* first-col */}
-          <div className='col-span-2 py-10 pl-5 bg-gradient-to-br from-brandBlue/90 to-primary/90 text-white rounded-3xl relative h-[320px]
+          <div className='col-span-3 py-10 pl-5 bg-gradient-to-br from-brandBlue/90 to-primary/90 text-white rounded-3xl relative h-[320px]
           flex items-end'>
             <div>
               <div className='mb-4'>
@@ -30,7 +30,7 @@ const Category = () => {
             <img src={Image2} alt="" className='w-[300px] h-[250px] absolute -right-1 lg:top-[40px]' />
           </div>
           {/* second-col */}
-          <div className='py-10 pl-8 bg-gradient-to-br from-black/90 to-gray-700/90
+          <div className='col-span-2 py-10 pl-8 bg-gradient-to-br from-black/90 to-gray-700/90
            text-white rounded-3xl relative h-[320px]
           flex items-end'>
             <div>
@@ -49,7 +49,7 @@ const Category = () => {
             <img src={Image3} alt="" className='w-[350px] h-[250px] absolute -right-50 lg:top-[50px] ' />
           </div>
           {/* third-col */}
-          <div className='py-10 pl-5 bg-gradient-to-br from-brandGreen to-brandYellow text-white rounded-3xl relative h-[320px]
+          <div className='col-span-2 py-10 pl-5 bg-gradient-to-br from-brandGreen to-brandYellow text-white rounded-3xl relative h-[320px]
           flex items-end'>
             <div>
               <div className='mb-4'>
@@ -67,7 +67,7 @@ const Category = () => {
             <img src={Image4} alt="" className='w-[350px] h-[300px] absolute -right-5 lg:buttom-[20px]' />
           </div>
           {/* fourth-col */}
-          <div className='py-10 pl-5 bg-gradient-to-br from-brandYellow/90 to-primary/90 text-white rounded-3xl relative h-[320px]
+          <div className='col-span-2 py-10 pl-5 bg-gradient-to-br from-brandYellow/90 to-primary/90 text-white rounded-3xl relative h-[320px]
           flex items-end'>
             <div>
               <div className='mb-4'>
