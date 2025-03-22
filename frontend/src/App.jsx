@@ -23,28 +23,35 @@ import ShippingDetails from "./components/ShippingDetails/ShippingDetails";
 import AuthPages from "./components/Auth/AuthPages";
 import ShippingReport from "./components/ShippingReport/ShippingReport";
 import { Analytics } from "@vercel/analytics/react";
+import img1 from "./assets/SA/f4.png";
+import img2 from "./assets/SA/RedB.png";
+
 
 const BannerData = {
-  disount: "30% OFF",
+  discount: "30% OFF",
   title: "New Collection",
   date: "2025-3-3",
   title2: "กุ้งแคระ",
   title3: "Red B",
   title4: "กุ้งเรดบี (Red Bee Shrimp) เป็นกุ้งแคระน้ำจืดที่ได้รับความนิยมอย่างมาก...",
   bgColor: "#f42c37",
+  image:img2,
 };
 
 const BannerData2 = {
-  disount: "30% OFF",
+  discount: "30% OFF",
   title: "New Collection",
   date: "2024-12-31",
   title2: "ปลา",
   title3: "Cardinal Tetra",
   title4: "ปลาคาร์ดินัลเป็นปลาขนาดเล็กที่มีสีสันสดใส...",
   bgColor: "#e65100",
+  image:img1,
+  
 };
 
 // ✅ ฟังก์ชันเช็คว่าอยู่หน้า Signin หรือ Signup หรือไม่
+// eslint-disable-next-line react/prop-types
 const Layout = ({ children }) => {
   const location = useLocation();
   const hideLayout = location.pathname === "/signin" || location.pathname === "/signup";
