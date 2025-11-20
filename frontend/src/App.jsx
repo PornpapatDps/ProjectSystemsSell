@@ -25,7 +25,22 @@ import ShippingReport from "./components/ShippingReport/ShippingReport";
 import { Analytics } from "@vercel/analytics/react";
 import img1 from "./assets/SA/f4.png";
 import img2 from "./assets/SA/RedB.png";
-
+import KonwFish from "./components/About/KnowFish/KnowFish";
+import KonwFish2 from "./components/About/KnowFish/KnowFish2";
+import KonwFish3 from "./components/About/KnowFish/KnowFish3";
+import KonwFish4 from "./components/About/KnowFish/KnowFish4";
+import KonwFish5 from "./components/About/KnowFish/KnowFish5";
+import KonwFish6 from "./components/About/KnowFish/KnowFish6";
+import KonwFish7 from "./components/About/KnowFish/KnowFish7";
+import KonwFish8 from "./components/About/KnowFish/KnowFish8";
+import KnowShrimp from "./components/About/KnowShrimp/KnowShrimp";
+import KnowShrimp2 from "./components/About/KnowShrimp/KnowShrimp2";
+import KnowShrimp3 from "./components/About/KnowShrimp/KnowShrimp3";
+import KnowShrimp4 from "./components/About/KnowShrimp/KnowShrimp4";
+import KnowShrimp5 from "./components/About/KnowShrimp/KnowShrimp5";
+import KnowShrimp6 from "./components/About/KnowShrimp/KnowShrimp6";
+import KnowShrimp7 from "./components/About/KnowShrimp/KnowShrimp7";
+import KnowShrimp8 from "./components/About/KnowShrimp/KnowShrimp8";
 
 const BannerData = {
   discount: "30% OFF",
@@ -99,6 +114,23 @@ const App = () => {
           <Route path="/checkout" element={<Layout><Checkout /></Layout>} />
           <Route path="/shipping-details" element={<Layout><ShippingDetails /></Layout>} />
           <Route path="/shipping-report" element={<Layout><ShippingReport /></Layout>} />
+          <Route path="/KonwFish1"element={<Layout><KonwFish/></Layout>}/>
+          <Route path="/KonwFish2"element={<Layout><KonwFish2/></Layout>}/>
+          <Route path="/KonwFish3"element={<Layout><KonwFish3/></Layout>}/>
+          <Route path="/KonwFish4"element={<Layout><KonwFish4/></Layout>}/>
+          <Route path="/KonwFish5"element={<Layout><KonwFish5/></Layout>}/>
+          <Route path="/KonwFish6"element={<Layout><KonwFish6/></Layout>}/>
+          <Route path="/KonwFish7"element={<Layout><KonwFish7/></Layout>}/>
+          <Route path="/KonwFish8"element={<Layout><KonwFish8/></Layout>}/>
+          <Route path="/KnowShrimp"element={<Layout><KnowShrimp/></Layout>}/>
+          <Route path="/KnowShrimp2"element={<Layout><KnowShrimp2/></Layout>}/>
+          <Route path="/KnowShrimp3"element={<Layout><KnowShrimp3/></Layout>}/>
+          <Route path="/KnowShrimp4"element={<Layout><KnowShrimp4/></Layout>}/>
+          <Route path="/KnowShrimp5"element={<Layout><KnowShrimp5/></Layout>}/>
+          <Route path="/KnowShrimp6"element={<Layout><KnowShrimp6/></Layout>}/>
+          <Route path="/KnowShrimp7"element={<Layout><KnowShrimp7/></Layout>}/>
+          <Route path="/KnowShrimp8"element={<Layout><KnowShrimp8/></Layout>}/>
+          
 
           {/* ✅ Signin & Signup จะแสดงผลแบบเต็มหน้า ไม่มี Navbar, Partner, Footer */}
           <Route path="/signin" element={<AuthPages isSignUp={false} />} />
